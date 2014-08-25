@@ -1,0 +1,736 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		982D466E19A0D23E003C9583 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 982D466D19A0D23E003C9583 /* Security.framework */; };
+		982D467019A0D249003C9583 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 982D466F19A0D249003C9583 /* SystemConfiguration.framework */; };
+		982D467219A0D252003C9583 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 982D467119A0D252003C9583 /* CFNetwork.framework */; };
+		982D467419A0D260003C9583 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 982D467319A0D260003C9583 /* libstdc++.dylib */; };
+		982D467619A0D26B003C9583 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 982D467519A0D26B003C9583 /* CoreAudio.framework */; };
+		982D467819A0D275003C9583 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 982D467719A0D275003C9583 /* AudioToolbox.framework */; };
+		98612B4919995DF400865193 /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98612B4819995DF400865193 /* mainViewController.swift */; };
+		987140F71993D4B2009E14A3 /* bg_image_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 987140F61993D4B2009E14A3 /* bg_image_1.jpg */; };
+		987725CC19A545FC0046D73F /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 987725CB19A545FC0046D73F /* UIImage+ImageEffects.m */; };
+		9881D4AD199EC10800F40D3D /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9881D4AC199EC10800F40D3D /* CustomView.swift */; };
+		9881D4AF199F495100F40D3D /* round_mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 9881D4AE199F495100F40D3D /* round_mask.png */; };
+		9881D54A19A0C41D00F40D3D /* SpotifyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9881D54919A0C41D00F40D3D /* SpotifyController.m */; };
+		98830D8D19A109BE001768B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98830D8C19A109BE001768B8 /* UIKit.framework */; };
+		98830D8F19A109CA001768B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98830D8E19A109CA001768B8 /* Foundation.framework */; };
+		98830D9119A109D4001768B8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98830D9019A109D4001768B8 /* CoreGraphics.framework */; };
+		98830E8619A11A19001768B8 /* libCocoaLibSpotify.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98830E8119A119D5001768B8 /* libCocoaLibSpotify.a */; };
+		98830E8819A143D7001768B8 /* shuffle.png in Resources */ = {isa = PBXBuildFile; fileRef = 98830E8719A143D7001768B8 /* shuffle.png */; };
+		98A11E6D19A0E0AB00CD2426 /* UserCredentialsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A11E6C19A0E0AB00CD2426 /* UserCredentialsHelper.m */; };
+		98A11E7119A0E0E400CD2426 /* AuthenticationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A11E7019A0E0E400CD2426 /* AuthenticationModel.m */; };
+		98A2C4C9199AAEE000545A7E /* icon_256.png in Resources */ = {isa = PBXBuildFile; fileRef = 98A2C4C8199AAEE000545A7E /* icon_256.png */; };
+		98BA5A1619ABA3A50003DF08 /* MZTimerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BA5A1519ABA3A50003DF08 /* MZTimerLabel.m */; };
+		98BA5A1819ABADAD0003DF08 /* disco.png in Resources */ = {isa = PBXBuildFile; fileRef = 98BA5A1719ABADAD0003DF08 /* disco.png */; };
+		98CA51671958B0E300FE2780 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CA51661958B0E300FE2780 /* AppDelegate.swift */; };
+		98CA51691958B0E300FE2780 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CA51681958B0E300FE2780 /* LoginViewController.swift */; };
+		98CA516C1958B0E300FE2780 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98CA516A1958B0E300FE2780 /* Main.storyboard */; };
+		98CA516E1958B0E300FE2780 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98CA516D1958B0E300FE2780 /* Images.xcassets */; };
+		98CA517A1958B0E300FE2780 /* muquizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CA51791958B0E300FE2780 /* muquizTests.swift */; };
+		98CA51871958BF5D00FE2780 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98CA51861958BF5D00FE2780 /* AVFoundation.framework */; };
+		98D2CC85199D522B008DD932 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D2CC84199D522B008DD932 /* Track.swift */; };
+		98F830AD19A7912400D8AB51 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98F830A819A790DC00D8AB51 /* GPUImage.framework */; };
+		98F830B019AA705A00D8AB51 /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F830AF19AA705A00D8AB51 /* white.png */; };
+		98FBE54019A16543007B1D2E /* InsetBlurModalSeque.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FBE53F19A16543007B1D2E /* InsetBlurModalSeque.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		98830E8019A119D5001768B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98830E7B19A119D5001768B8 /* CocoaLibSpotify iOS Library.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 50AF49DC1439CBFE00E4A5EF;
+			remoteInfo = CocoaLibSpotify;
+		};
+		98830E8219A119D5001768B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98830E7B19A119D5001768B8 /* CocoaLibSpotify iOS Library.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 50D4F52B156BCDE800E237DD;
+			remoteInfo = CocoaLSTests;
+		};
+		98CA51741958B0E300FE2780 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98CA51591958B0E300FE2780 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 98CA51601958B0E300FE2780;
+			remoteInfo = muquiz;
+		};
+		98F830A519A790DC00D8AB51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98F8309E19A790DB00D8AB51 /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCF1A33414DDB1EC00852800;
+			remoteInfo = GPUImage;
+		};
+		98F830A719A790DC00D8AB51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98F8309E19A790DB00D8AB51 /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCE209E51943F20C002FEED8;
+			remoteInfo = GPUImageFramework;
+		};
+		98F830AB19A7911100D8AB51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98F8309E19A790DB00D8AB51 /* GPUImage.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BCE209E41943F20C002FEED8;
+			remoteInfo = GPUImageFramework;
+		};
+		98FBE53D19A1615C007B1D2E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 98830E7B19A119D5001768B8 /* CocoaLibSpotify iOS Library.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 50AF49DB1439CBFE00E4A5EF;
+			remoteInfo = CocoaLibSpotify;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		982D466D19A0D23E003C9583 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		982D466F19A0D249003C9583 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		982D467119A0D252003C9583 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		982D467319A0D260003C9583 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		982D467519A0D26B003C9583 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		982D467719A0D275003C9583 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		98612B4819995DF400865193 /* mainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
+		98612B4A199960FE00865193 /* backgroundVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = backgroundVideo.mp4; path = ../backgroundVideo.mp4; sourceTree = "<group>"; };
+		987140F61993D4B2009E14A3 /* bg_image_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg_image_1.jpg; path = ../../../../../../../../Documents/Development/MusiQuiz/muquiz/bg_image_1.jpg; sourceTree = BUILT_PRODUCTS_DIR; };
+		987725CA19A545FC0046D73F /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		987725CB19A545FC0046D73F /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		9881D4AC199EC10800F40D3D /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		9881D4AE199F495100F40D3D /* round_mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = round_mask.png; sourceTree = "<group>"; };
+		9881D54819A0C41D00F40D3D /* SpotifyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotifyController.h; sourceTree = "<group>"; };
+		9881D54919A0C41D00F40D3D /* SpotifyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotifyController.m; sourceTree = "<group>"; };
+		98830D8C19A109BE001768B8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		98830D8E19A109CA001768B8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		98830D9019A109D4001768B8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		98830E7B19A119D5001768B8 /* CocoaLibSpotify iOS Library.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CocoaLibSpotify iOS Library.xcodeproj"; path = "../../../Downloads/cocoalibspotify-master/iOS Library/CocoaLibSpotify iOS Library.xcodeproj"; sourceTree = "<group>"; };
+		98830E8719A143D7001768B8 /* shuffle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shuffle.png; sourceTree = "<group>"; };
+		98A11E6B19A0E0AB00CD2426 /* UserCredentialsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCredentialsHelper.h; sourceTree = "<group>"; };
+		98A11E6C19A0E0AB00CD2426 /* UserCredentialsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCredentialsHelper.m; sourceTree = "<group>"; };
+		98A11E6F19A0E0E400CD2426 /* AuthenticationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationModel.h; sourceTree = "<group>"; };
+		98A11E7019A0E0E400CD2426 /* AuthenticationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationModel.m; sourceTree = "<group>"; };
+		98A2C4C8199AAEE000545A7E /* icon_256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_256.png; sourceTree = "<group>"; };
+		98BA5A1419ABA3A50003DF08 /* MZTimerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZTimerLabel.h; sourceTree = "<group>"; };
+		98BA5A1519ABA3A50003DF08 /* MZTimerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZTimerLabel.m; sourceTree = "<group>"; };
+		98BA5A1719ABADAD0003DF08 /* disco.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disco.png; sourceTree = "<group>"; };
+		98CA51611958B0E300FE2780 /* muquiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = muquiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		98CA51651958B0E300FE2780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98CA51661958B0E300FE2780 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		98CA51681958B0E300FE2780 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		98CA516B1958B0E300FE2780 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		98CA516D1958B0E300FE2780 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		98CA51731958B0E300FE2780 /* muquizTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = muquizTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		98CA51781958B0E300FE2780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98CA51791958B0E300FE2780 /* muquizTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = muquizTests.swift; sourceTree = "<group>"; };
+		98CA51861958BF5D00FE2780 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		98CA51881958BFB100FE2780 /* muquiz-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "muquiz-Bridging-Header.h"; sourceTree = "<group>"; };
+		98D2CC84199D522B008DD932 /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		98F8309E19A790DB00D8AB51 /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = "../../../Downloads/GPUImage-master/framework/GPUImage.xcodeproj"; sourceTree = "<group>"; };
+		98F830AF19AA705A00D8AB51 /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white.png; sourceTree = "<group>"; };
+		98FBE53F19A16543007B1D2E /* InsetBlurModalSeque.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsetBlurModalSeque.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		98CA515E1958B0E300FE2780 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98F830AD19A7912400D8AB51 /* GPUImage.framework in Frameworks */,
+				98830E8619A11A19001768B8 /* libCocoaLibSpotify.a in Frameworks */,
+				98830D9119A109D4001768B8 /* CoreGraphics.framework in Frameworks */,
+				98830D8F19A109CA001768B8 /* Foundation.framework in Frameworks */,
+				98830D8D19A109BE001768B8 /* UIKit.framework in Frameworks */,
+				982D467819A0D275003C9583 /* AudioToolbox.framework in Frameworks */,
+				982D467619A0D26B003C9583 /* CoreAudio.framework in Frameworks */,
+				982D467219A0D252003C9583 /* CFNetwork.framework in Frameworks */,
+				982D467019A0D249003C9583 /* SystemConfiguration.framework in Frameworks */,
+				982D466E19A0D23E003C9583 /* Security.framework in Frameworks */,
+				98CA51871958BF5D00FE2780 /* AVFoundation.framework in Frameworks */,
+				982D467419A0D260003C9583 /* libstdc++.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		98CA51701958B0E300FE2780 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		195EA71335C24B44B7873F7F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		987140F51993D4A6009E14A3 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				98BA5A1719ABADAD0003DF08 /* disco.png */,
+				98F830AF19AA705A00D8AB51 /* white.png */,
+				98830E8719A143D7001768B8 /* shuffle.png */,
+				9881D4AE199F495100F40D3D /* round_mask.png */,
+				98A2C4C8199AAEE000545A7E /* icon_256.png */,
+				98612B4A199960FE00865193 /* backgroundVideo.mp4 */,
+				987140F61993D4B2009E14A3 /* bg_image_1.jpg */,
+			);
+			name = assets;
+			sourceTree = "<group>";
+		};
+		98830E7C19A119D5001768B8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				98830E8119A119D5001768B8 /* libCocoaLibSpotify.a */,
+				98830E8319A119D5001768B8 /* CocoaLSTests.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		98A11E6E19A0E0BE00CD2426 /* Spotify */ = {
+			isa = PBXGroup;
+			children = (
+				98A11E6F19A0E0E400CD2426 /* AuthenticationModel.h */,
+				98A11E7019A0E0E400CD2426 /* AuthenticationModel.m */,
+				98A11E6B19A0E0AB00CD2426 /* UserCredentialsHelper.h */,
+				98A11E6C19A0E0AB00CD2426 /* UserCredentialsHelper.m */,
+				9881D54819A0C41D00F40D3D /* SpotifyController.h */,
+				9881D54919A0C41D00F40D3D /* SpotifyController.m */,
+			);
+			name = Spotify;
+			sourceTree = "<group>";
+		};
+		98A1218C19A0EC4000CD2426 /* frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				98830D9019A109D4001768B8 /* CoreGraphics.framework */,
+				98830D8E19A109CA001768B8 /* Foundation.framework */,
+				98830D8C19A109BE001768B8 /* UIKit.framework */,
+				982D467719A0D275003C9583 /* AudioToolbox.framework */,
+				982D467519A0D26B003C9583 /* CoreAudio.framework */,
+				982D467319A0D260003C9583 /* libstdc++.dylib */,
+				982D467119A0D252003C9583 /* CFNetwork.framework */,
+				982D466F19A0D249003C9583 /* SystemConfiguration.framework */,
+				982D466D19A0D23E003C9583 /* Security.framework */,
+				98CA51861958BF5D00FE2780 /* AVFoundation.framework */,
+			);
+			name = frameworks;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		98CA51581958B0E300FE2780 = {
+			isa = PBXGroup;
+			children = (
+				98F8309E19A790DB00D8AB51 /* GPUImage.xcodeproj */,
+				98830E7B19A119D5001768B8 /* CocoaLibSpotify iOS Library.xcodeproj */,
+				98CA51631958B0E300FE2780 /* muquiz */,
+				98CA51761958B0E300FE2780 /* muquizTests */,
+				98CA51621958B0E300FE2780 /* Products */,
+				195EA71335C24B44B7873F7F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		98CA51621958B0E300FE2780 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				98CA51611958B0E300FE2780 /* muquiz.app */,
+				98CA51731958B0E300FE2780 /* muquizTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		98CA51631958B0E300FE2780 /* muquiz */ = {
+			isa = PBXGroup;
+			children = (
+				98BA5A1419ABA3A50003DF08 /* MZTimerLabel.h */,
+				98BA5A1519ABA3A50003DF08 /* MZTimerLabel.m */,
+				987725CA19A545FC0046D73F /* UIImage+ImageEffects.h */,
+				987725CB19A545FC0046D73F /* UIImage+ImageEffects.m */,
+				98A11E6E19A0E0BE00CD2426 /* Spotify */,
+				987140F51993D4A6009E14A3 /* assets */,
+				98CA51661958B0E300FE2780 /* AppDelegate.swift */,
+				98CA51881958BFB100FE2780 /* muquiz-Bridging-Header.h */,
+				98CA51681958B0E300FE2780 /* LoginViewController.swift */,
+				98CA516A1958B0E300FE2780 /* Main.storyboard */,
+				9881D4AC199EC10800F40D3D /* CustomView.swift */,
+				98612B4819995DF400865193 /* mainViewController.swift */,
+				98FBE53F19A16543007B1D2E /* InsetBlurModalSeque.swift */,
+				98D2CC84199D522B008DD932 /* Track.swift */,
+				98CA516D1958B0E300FE2780 /* Images.xcassets */,
+				98CA51641958B0E300FE2780 /* Supporting Files */,
+				98A1218C19A0EC4000CD2426 /* frameworks */,
+			);
+			path = muquiz;
+			sourceTree = "<group>";
+		};
+		98CA51641958B0E300FE2780 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				98CA51651958B0E300FE2780 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		98CA51761958B0E300FE2780 /* muquizTests */ = {
+			isa = PBXGroup;
+			children = (
+				98CA51791958B0E300FE2780 /* muquizTests.swift */,
+				98CA51771958B0E300FE2780 /* Supporting Files */,
+			);
+			path = muquizTests;
+			sourceTree = "<group>";
+		};
+		98CA51771958B0E300FE2780 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				98CA51781958B0E300FE2780 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		98F8309F19A790DB00D8AB51 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				98F830A619A790DC00D8AB51 /* libGPUImage.a */,
+				98F830A819A790DC00D8AB51 /* GPUImage.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		98CA51601958B0E300FE2780 /* muquiz */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 98CA517D1958B0E300FE2780 /* Build configuration list for PBXNativeTarget "muquiz" */;
+			buildPhases = (
+				98CA515D1958B0E300FE2780 /* Sources */,
+				98CA515E1958B0E300FE2780 /* Frameworks */,
+				98CA515F1958B0E300FE2780 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				98F830AC19A7911100D8AB51 /* PBXTargetDependency */,
+				98FBE53E19A1615C007B1D2E /* PBXTargetDependency */,
+			);
+			name = muquiz;
+			productName = muquiz;
+			productReference = 98CA51611958B0E300FE2780 /* muquiz.app */;
+			productType = "com.apple.product-type.application";
+		};
+		98CA51721958B0E300FE2780 /* muquizTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 98CA51801958B0E300FE2780 /* Build configuration list for PBXNativeTarget "muquizTests" */;
+			buildPhases = (
+				98CA516F1958B0E300FE2780 /* Sources */,
+				98CA51701958B0E300FE2780 /* Frameworks */,
+				98CA51711958B0E300FE2780 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				98CA51751958B0E300FE2780 /* PBXTargetDependency */,
+			);
+			name = muquizTests;
+			productName = muquizTests;
+			productReference = 98CA51731958B0E300FE2780 /* muquizTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		98CA51591958B0E300FE2780 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = game;
+				TargetAttributes = {
+					98CA51601958B0E300FE2780 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					98CA51721958B0E300FE2780 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 98CA51601958B0E300FE2780;
+					};
+				};
+			};
+			buildConfigurationList = 98CA515C1958B0E300FE2780 /* Build configuration list for PBXProject "muquiz" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				English,
+			);
+			mainGroup = 98CA51581958B0E300FE2780;
+			productRefGroup = 98CA51621958B0E300FE2780 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 98830E7C19A119D5001768B8 /* Products */;
+					ProjectRef = 98830E7B19A119D5001768B8 /* CocoaLibSpotify iOS Library.xcodeproj */;
+				},
+				{
+					ProductGroup = 98F8309F19A790DB00D8AB51 /* Products */;
+					ProjectRef = 98F8309E19A790DB00D8AB51 /* GPUImage.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				98CA51601958B0E300FE2780 /* muquiz */,
+				98CA51721958B0E300FE2780 /* muquizTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		98830E8119A119D5001768B8 /* libCocoaLibSpotify.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCocoaLibSpotify.a;
+			remoteRef = 98830E8019A119D5001768B8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		98830E8319A119D5001768B8 /* CocoaLSTests.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = CocoaLSTests.app;
+			remoteRef = 98830E8219A119D5001768B8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		98F830A619A790DC00D8AB51 /* libGPUImage.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libGPUImage.a;
+			remoteRef = 98F830A519A790DC00D8AB51 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		98F830A819A790DC00D8AB51 /* GPUImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GPUImage.framework;
+			remoteRef = 98F830A719A790DC00D8AB51 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		98CA515F1958B0E300FE2780 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98A2C4C9199AAEE000545A7E /* icon_256.png in Resources */,
+				987140F71993D4B2009E14A3 /* bg_image_1.jpg in Resources */,
+				98CA516C1958B0E300FE2780 /* Main.storyboard in Resources */,
+				98830E8819A143D7001768B8 /* shuffle.png in Resources */,
+				9881D4AF199F495100F40D3D /* round_mask.png in Resources */,
+				98F830B019AA705A00D8AB51 /* white.png in Resources */,
+				98BA5A1819ABADAD0003DF08 /* disco.png in Resources */,
+				98CA516E1958B0E300FE2780 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		98CA51711958B0E300FE2780 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		98CA515D1958B0E300FE2780 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98A11E7119A0E0E400CD2426 /* AuthenticationModel.m in Sources */,
+				9881D4AD199EC10800F40D3D /* CustomView.swift in Sources */,
+				98CA51691958B0E300FE2780 /* LoginViewController.swift in Sources */,
+				98CA51671958B0E300FE2780 /* AppDelegate.swift in Sources */,
+				98BA5A1619ABA3A50003DF08 /* MZTimerLabel.m in Sources */,
+				98612B4919995DF400865193 /* mainViewController.swift in Sources */,
+				98FBE54019A16543007B1D2E /* InsetBlurModalSeque.swift in Sources */,
+				987725CC19A545FC0046D73F /* UIImage+ImageEffects.m in Sources */,
+				9881D54A19A0C41D00F40D3D /* SpotifyController.m in Sources */,
+				98D2CC85199D522B008DD932 /* Track.swift in Sources */,
+				98A11E6D19A0E0AB00CD2426 /* UserCredentialsHelper.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		98CA516F1958B0E300FE2780 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98CA517A1958B0E300FE2780 /* muquizTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		98CA51751958B0E300FE2780 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 98CA51601958B0E300FE2780 /* muquiz */;
+			targetProxy = 98CA51741958B0E300FE2780 /* PBXContainerItemProxy */;
+		};
+		98F830AC19A7911100D8AB51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GPUImageFramework;
+			targetProxy = 98F830AB19A7911100D8AB51 /* PBXContainerItemProxy */;
+		};
+		98FBE53E19A1615C007B1D2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CocoaLibSpotify;
+			targetProxy = 98FBE53D19A1615C007B1D2E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		98CA516A1958B0E300FE2780 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				98CA516B1958B0E300FE2780 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		98CA517B1958B0E300FE2780 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				METAL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		98CA517C1958B0E300FE2780 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				METAL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		98CA517E1958B0E300FE2780 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEFINES_MODULE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					$CONFIGURATION_BUILD_DIR/include,
+					"$(PROJECT_DIR)",
+					../..,
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					$CONFIGURATION_BUILD_DIR/include,
+					/muquiz/muquiz,
+				);
+				INFOPLIST_FILE = muquiz/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "muquiz/muquiz-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "\"$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include\"";
+			};
+			name = Debug;
+		};
+		98CA517F1958B0E300FE2780 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEFINES_MODULE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					../..,
+					$CONFIGURATION_BUILD_DIR/include,
+					"$(PROJECT_DIR)/libspotify-12.1.64-iOS-universal",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					$CONFIGURATION_BUILD_DIR/include,
+					/muquiz/muquiz,
+				);
+				INFOPLIST_FILE = muquiz/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "muquiz/muquiz-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "\"$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include\"";
+			};
+			name = Release;
+		};
+		98CA51811958B0E300FE2780 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/muquiz.app/muquiz";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = muquizTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		98CA51821958B0E300FE2780 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/muquiz.app/muquiz";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = muquizTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		98CA515C1958B0E300FE2780 /* Build configuration list for PBXProject "muquiz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98CA517B1958B0E300FE2780 /* Debug */,
+				98CA517C1958B0E300FE2780 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		98CA517D1958B0E300FE2780 /* Build configuration list for PBXNativeTarget "muquiz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98CA517E1958B0E300FE2780 /* Debug */,
+				98CA517F1958B0E300FE2780 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		98CA51801958B0E300FE2780 /* Build configuration list for PBXNativeTarget "muquizTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98CA51811958B0E300FE2780 /* Debug */,
+				98CA51821958B0E300FE2780 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 98CA51591958B0E300FE2780 /* Project object */;
+}

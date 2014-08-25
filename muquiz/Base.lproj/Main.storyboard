@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6205" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
+    </dependencies>
+    <scenes>
+        <!--ViewController-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" title="ViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="muquiz" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_image_1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="wN0-sF-JgL">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="574"/>
+                                <color key="backgroundColor" red="0.86666666670000003" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="deviceRGB"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2jE-4X-hlP">
+                                <rect key="frame" x="0.0" y="-47" width="320" height="574"/>
+                                <color key="backgroundColor" red="0.86666666670000003" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="deviceRGB"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" alpha="0.79999999999999982" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u06-Gz-pIx">
+                                <rect key="frame" x="20" y="82" width="276" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" alpha="0.79999999999999982" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fZD-gp-zbN">
+                                <rect key="frame" x="20" y="111" width="276" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="yo!" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shK-xB-Ocb">
+                                <rect key="frame" x="248" y="86" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="awesome!" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8z-Vd-gYe">
+                                <rect key="frame" x="233" y="115" width="57" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hbJ-eW-ZYu">
+                                <rect key="frame" x="20" y="170" width="280" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.70000000000000007" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Let's go">
+                                            <attributes>
+                                                <color key="NSColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jG9-lS-miJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dOg-WN-Zvy"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="480"/>
+                    <connections>
+                        <outlet property="backgroundImageCopy" destination="2jE-4X-hlP" id="HCX-db-4ig"/>
+                        <outlet property="backgroundImageView" destination="wN0-sF-JgL" id="5ot-gg-HF2"/>
+                        <outlet property="loginButton" destination="hbJ-eW-ZYu" id="M9t-EE-whb"/>
+                        <outlet property="passwordHintLabel" destination="b8z-Vd-gYe" id="gN1-hr-XTU"/>
+                        <outlet property="passwordTextField" destination="fZD-gp-zbN" id="UCn-Dx-3SA"/>
+                        <outlet property="usernameHintLabel" destination="shK-xB-Ocb" id="knO-Ec-zZd"/>
+                        <outlet property="usernameTextField" destination="u06-Gz-pIx" id="Cwe-Z5-V8u"/>
+                        <segue destination="Rx5-YW-Y4u" kind="custom" identifier="push" customClass="InsetBlurModalSeque" id="X0x-dt-oab"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="222" y="251"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="D6C-Pt-vov">
+            <objects>
+                <viewController storyboardIdentifier="mainViewController" id="Rx5-YW-Y4u" customClass="mainViewController" customModule="muquiz" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qCI-6n-0R2"/>
+                        <viewControllerLayoutGuide type="bottom" id="6gG-0I-iJX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ziA-IV-CdI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2iA-Tx-TlH" customClass="CustomView" customModule="muquiz" customModuleProvider="target">
+                                <rect key="frame" x="20" y="100" width="280" height="280"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_image_1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="9he-2P-1Rh">
+                                <rect key="frame" x="40" y="120" width="240" height="240"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x5s-MX-49P" userLabel="bg_image_1_copy.jpg">
+                                <rect key="frame" x="40" y="120" width="240" height="240"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ojJ-oJ-MBE">
+                                <rect key="frame" x="150" y="403" width="73" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
+                                <state key="normal" title="eurodance">
+                                    <color key="titleColor" red="0.86666666670000003" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPushButton2:" destination="Rx5-YW-Y4u" eventType="touchUpInside" id="fJs-Ow-3Rs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wGg-Ae-tFj">
+                                <rect key="frame" x="227" y="403" width="73" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
+                                <state key="normal" title="britpop">
+                                    <color key="titleColor" red="0.86666666670000003" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPushButton3:" destination="Rx5-YW-Y4u" eventType="touchUpInside" id="2rM-lH-zdu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLV-ek-hu4">
+                                <rect key="frame" x="201" y="450" width="99" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
+                                <state key="normal" title="ambient fusion">
+                                    <color key="titleColor" red="0.86666666670000003" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPushButton6:" destination="Rx5-YW-Y4u" eventType="touchUpInside" id="vY0-NS-o6I"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GXI-FM-Aou">
+                                <rect key="frame" x="133" y="450" width="60" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
+                                <state key="normal" title="acid jazz">
+                                    <color key="titleColor" red="0.86666666670000003" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPushButton5:" destination="Rx5-YW-Y4u" eventType="touchUpInside" id="5YE-Rc-Bal"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9d-Z7-3uc">
+                                <rect key="frame" x="20" y="450" width="105" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
+                                <state key="normal" title="minimal techno">
+                                    <color key="titleColor" red="0.86666666670000003" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPushButton4:" destination="Rx5-YW-Y4u" eventType="touchUpInside" id="6PD-Y0-WRZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aA1-WM-XoW">
+                                <rect key="frame" x="20" y="403" width="122" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                                <state key="normal" title="underground hip hop">
+                                    <color key="titleColor" red="0.8666666666666667" green="0.49803921568627452" blue="0.49803921568627452" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPushButton1:" destination="Rx5-YW-Y4u" eventType="touchUpInside" id="6Z3-Nh-TNI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YhE-j8-mdR">
+                                <rect key="frame" x="48" y="126" width="232" height="234"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPushPlayButton:" destination="Rx5-YW-Y4u" eventType="touchUpInside" id="Is6-cK-T2E"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6NJ-hC-uIQ">
+                                <rect key="frame" x="20" y="40" width="280" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shuffle.png" translatesAutoresizingMaskIntoConstraints="NO" id="JhJ-C5-Xv3">
+                                <rect key="frame" x="90" y="176" width="146" height="128"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="white.png" translatesAutoresizingMaskIntoConstraints="NO" id="P2m-ZX-x4u">
+                                <rect key="frame" x="20" y="39" width="280" height="22"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tcw-mv-0qf" customClass="MZTimerLabel">
+                                <rect key="frame" x="70" y="388" width="181" height="84"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.59999999999999998" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="JLb-fB-CZ2"/>
+                    <connections>
+                        <outlet property="blurryImageView" destination="P2m-ZX-x4u" id="clO-am-TiA"/>
+                        <outlet property="button1" destination="aA1-WM-XoW" id="wcj-YF-eYj"/>
+                        <outlet property="button2" destination="ojJ-oJ-MBE" id="8DI-aD-74E"/>
+                        <outlet property="button3" destination="wGg-Ae-tFj" id="PON-ut-87K"/>
+                        <outlet property="button4" destination="w9d-Z7-3uc" id="dlq-Tu-goQ"/>
+                        <outlet property="button5" destination="GXI-FM-Aou" id="xlH-a5-vBb"/>
+                        <outlet property="button6" destination="oLV-ek-hu4" id="nFl-y7-xwl"/>
+                        <outlet property="customView" destination="2iA-Tx-TlH" id="GXP-ZA-2Ba"/>
+                        <outlet property="playButton" destination="YhE-j8-mdR" id="8lG-nX-Fhs"/>
+                        <outlet property="shuffleImageView" destination="JhJ-C5-Xv3" id="uZK-xQ-wN6"/>
+                        <outlet property="songImageView" destination="9he-2P-1Rh" id="whB-1Z-FeO"/>
+                        <outlet property="songImageViewCopy" destination="x5s-MX-49P" id="v8h-OI-ekk"/>
+                        <outlet property="ticker" destination="Tcw-mv-0qf" id="NVq-bL-32g"/>
+                        <outlet property="titleLabel" destination="6NJ-hC-uIQ" id="W8T-uQ-Q9s"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Hs-XE-2fl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="643" y="251"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg_image_1.jpg" width="615" height="385"/>
+        <image name="shuffle.png" width="626" height="626"/>
+        <image name="white.png" width="504" height="360"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination">
+            <size key="portraitSize" width="320" height="480"/>
+            <size key="landscapeSize" width="480" height="320"/>
+        </simulatedScreenMetrics>
+    </simulatedMetricsContainer>
+</document>
