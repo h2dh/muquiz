@@ -2,9 +2,6 @@
 //  SpotifyController.m
 //  SpotifyLabb
 //
-//  Created by Arthur Onoszko on 10/07/14.
-//  Copyright (c) 2014 arthur. All rights reserved.
-//
 
 #import "SpotifyController.h"
 #import "CocoaLibSpotify.h"
@@ -16,6 +13,7 @@
 @property (nonatomic, strong) UserCredentialsHelper *userDefaultsHelper;
 @property (nonatomic, strong) SPPlaybackManager *playbackManager;
 @property (nonatomic, strong) SPTrack *currentTrack;
+@property (nonatomic, strong) NSTimer* timer;
 
 
 @end
@@ -70,10 +68,14 @@
 -(void)tryLoginIfStoredCredentials
 {
     AuthenticationModel *authenticatedUser = [self.userDefaultsHelper getSavedLoginCredentials];
-    if(authenticatedUser)
+    if(authenticatedUser.userName)
     {
         [self loginWithUserName:authenticatedUser.userName andExistingCredentials:authenticatedUser.credentials];
+        self.successfullLogin = YES;
+    } else {
+        self.successfullLogin = NO;
     }
+    
 }
 
 -(void)loginWithUserName:(NSString *)userName andPassword:(NSString *)password
@@ -137,10 +139,17 @@
 {
     NSLog(@"Log Message %@", aMessage);
 }
+
+-(void) pause:(SPTrack *)track {
+    [self pausePlayMusic];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"kSPSongEnded" object:nil];
+    [self.timer invalidate];
+}
 -(void) startPauseTrack:(SPTrack *)track
 {
 
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"kSPSongEnded" object:nil];
     if(self.playbackManager.isPlaying)
     {
         if([self.currentTrack isEqual:track])
@@ -166,16 +175,16 @@
 }
 
 -(void)startAndStop:(SPTrack *)track After:(NSInteger)seconds{
-    NSTimer* myTimer = [NSTimer scheduledTimerWithTimeInterval: 30.0 target: self
+    self.timer = [NSTimer scheduledTimerWithTimeInterval: 30.0 target: self
                                                       selector: @selector(songDone:) userInfo: nil repeats: YES];
     [self startPlayingTrack:track];
     
 }
 
--(void)songDone:(NSTimer*) t {
+-(void)songDone:(NSTimer*) timer {
     [self pausePlayMusic];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"kSPSongEnded" object:nil];
-    [t invalidate];
+    [self.timer invalidate];
 }
 
 -(void) startPlayingTrack:(SPTrack *)trackToPlay

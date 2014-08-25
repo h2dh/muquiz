@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import QuartzCore
+import Foundation
+import MediaPlayer
 
 @objc(InsetBlurModalSeque) class InsetBlurModalSeque: UIStoryboardSegue {
     
@@ -50,7 +53,7 @@ import UIKit
         backgroundImageView.alpha = 0.0;
         
         // Animate
-        UIView.animateWithDuration(0.5,
+        UIView.animateWithDuration(5.0,
             delay: 0.0,
             usingSpringWithDamping: 0.6,
             initialSpringVelocity: 0.0,

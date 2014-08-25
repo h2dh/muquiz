@@ -18,62 +18,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var mask: CALayer?
     var imageView: UIImageView?
     var masterViewController: UINavigationController!
-    var spotifyController : SpotifyController!
+    var spotifyController : SpotifyController = SpotifyController()
+    var succesfulLogin : Bool = false
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
+        
+        // Login if we already have saved credentials for user
+         self.spotifyController.tryLoginIfStoredCredentials()
+        
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        UIApplication.sharedApplication().statusBarHidden = true
+        self.window!.rootViewController = UINavigationController()
+        var rootViewController = self.window!.rootViewController as UINavigationController
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if (self.spotifyController.successfullLogin) {
+            let mainVC :mainViewController = mainStoryboard.instantiateViewControllerWithIdentifier("mainViewController") as mainViewController
+            mainVC.spotifyController = self.spotifyController
+                rootViewController.pushViewController(mainVC, animated: true)
+                
+        } else {
+            let loginVC : LoginViewController = mainStoryboard.instantiateViewControllerWithIdentifier("LoginViewController") as LoginViewController
+            loginVC.spotifyController = self.spotifyController
+            rootViewController.pushViewController(loginVC, animated: true)
+        }
         
         let imageView = UIImageView(frame: self.window!.frame)
         imageView.image = UIImage(named: "bg_image_1.jpg")
         imageView.contentMode = UIViewContentMode.ScaleAspectFill
-       /*
-        let introLabel = UILabel(frame: CGRectMake(150.0, 150.0, 100.0, 40.0))
-        introLabel.text = "Muquiz"
-        introLabel.textColor = UIColor.whiteColor()
-        self.window!.addSubview(introLabel)
         
-        */
-        //var blur:UIBlurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
-        //var effectView:UIVisualEffectView = UIVisualEffectView (effect: blur)
-        //effectView.frame = imageView.bounds
-        //imageView.addSubview(effectView)
+        var blur:UIBlurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        var effectView:UIVisualEffectView = UIVisualEffectView (effect: blur)
+        effectView.frame = imageView.bounds
+        imageView.addSubview(effectView)
         
         self.window!.addSubview(imageView)
-        /*
-        self.mask = CALayer()
-        self.mask!.contents = UIImage(named: "round_mask.png").CGImage
-        self.mask!.contentsGravity = kCAGravityResizeAspectFill
-        self.mask!.bounds = CGRect(x: 0, y: 0, width: 100, height: 100)
-        self.mask!.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        self.mask!.position = CGPoint(x: imageView.frame.size.width/2, y: imageView.frame.size.height/2)
-        
-        imageView.layer.mask = mask
-        self.imageView = imageView*/
-        
-        var filter : GPUImagePixellateFilter = GPUImagePixellateFilter()
-        
-        imageView.image = filter.imageByFilteringImage(imageView.image)
-
-       // imageView.image.applyExtraLightEffect()
-          
-        //animateMask()
-        
-        // Override point for customization after application launch.
-        //self.window!.backgroundColor = UIColor(red: 255/255, green: 117/255, blue: 89/255, alpha: 1)
-        //self.window!.makeKeyAndVisible()
-        UIApplication.sharedApplication().statusBarHidden = true
-        
-        self.window!.rootViewController = UINavigationController()
-        var rootViewController = self.window!.rootViewController as UINavigationController
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let LoginController :LoginViewController = LoginViewController()
-        var profileViewController = mainStoryboard.instantiateViewControllerWithIdentifier("LoginViewController") as LoginViewController
-        profileViewController.spotifyController = self.spotifyController
-        profileViewController.setSpotifyController()
-        rootViewController.pushViewController(profileViewController, animated: true)
-        
+    
         return true
-        
     }
     
     func applicationWillResignActive(application: UIApplication) {
@@ -98,42 +79,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    func animateMask() {
-        
-        self.mask!.bounds = CGRect(x: 0, y: 0, width: 100, height: 100)
-        let keyFrameAnimation = CAKeyframeAnimation(keyPath: "bounds")
-        keyFrameAnimation.delegate = self
-        keyFrameAnimation.duration = 1
-        keyFrameAnimation.beginTime = CACurrentMediaTime() + 1 //add delay of 1 second
-        let initalBounds = NSValue(CGRect: mask!.bounds)
-        let secondBounds = NSValue(CGRect: CGRect(x: 0, y: 0, width: 90, height: 90))
-        let finalBounds = NSValue(CGRect: CGRect(x: 0, y: 0, width: 1500, height: 1500))
-        keyFrameAnimation.values = [initalBounds, secondBounds, finalBounds]
-        keyFrameAnimation.keyTimes = [0, 0.3, 1]
-        keyFrameAnimation.timingFunctions = [CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut), CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)]
-        self.mask!.addAnimation(keyFrameAnimation, forKey: "bounds")
-       
-    }
-    
-    override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
-         self.mask!.bounds = CGRect(x: 0, y: 0, width: 1500, height: 1500)
-        self.window!.rootViewController = UINavigationController()
-        var rootViewController = self.window!.rootViewController as UINavigationController
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        var profileViewController = mainStoryboard.instantiateViewControllerWithIdentifier("LoginViewController") as LoginViewController
-        rootViewController.pushViewController(profileViewController, animated: true)
-        
-        
-    }
-    
-    
     func setSpotifyController()->SpotifyController
     {
         if(spotifyController == nil)
         {
             spotifyController = SpotifyController();
         }
-        return spotifyController!;
+        return spotifyController;
     }
     
     

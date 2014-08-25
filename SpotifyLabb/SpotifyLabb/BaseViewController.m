@@ -16,3 +16,4 @@
     return appDelegate.spotifyController;
 }
 @end
+ 

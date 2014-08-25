@@ -22,54 +22,31 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var passwordHintLabel : UILabel!
     @IBOutlet var backgroundImageView : UIImageView!
     
-    @IBOutlet var spotifyController : SpotifyController!
+    var spotifyController : SpotifyController!
     var successfullLogin : Bool = false
     var keypath : String = ""
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-            
-       // let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ViewController") as UIViewController
-        // .instantiatViewControllerWithIdentifier() returns AnyObject! this must be downcast to utilize it
         
+        self.addObserver(self, forKeyPath: "spotifyController.loggedInUser", options: .New, context: nil)
         
         self.navigationController.navigationBar.hidden = true
         
-        self.addObserver(self, forKeyPath: "spotifyController.loggedInUser", options: .New, context: nil)
-        self.spotifyController.tryLoginIfStoredCredentials()
-        
         self.usernameTextField.addTarget(self, action: Selector("textFieldShouldEndEditing:"), forControlEvents: UIControlEvents.EditingChanged)
         self.passwordTextField.addTarget(self, action: Selector("textFieldShouldEndEditing:"), forControlEvents: UIControlEvents.EditingChanged)
-        
-        //self.startBackgroundVideo()
         
         self.usernameHintLabel.alpha = 0.0
         self.passwordHintLabel.alpha = 0.0
         
         var filter : GPUImagePixellateFilter = GPUImagePixellateFilter()
-        
         var filteredImage : UIImage = filter.imageByFilteringImage(self.backgroundImageView.image)
-        
         self.backgroundImageCopy.image = filteredImage
-        
-        
-        //var transition: CATransition = CATransition()
-   /*
-        let transition = CABasicAnimation(keyPath: "opacity")
-        
-        transition.beginTime = CACurrentMediaTime() + 4 //add delay of 1 second
-        transition.duration = 0.5
-        transition.fromValue = 0.0
-        transition.toValue = 1.0
-        transition.delegate = self
-        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-
-        self.backgroundImageView.layer.addAnimation(transition, forKey: "opacity")*/
         
         let transitionFadeOut = CABasicAnimation(keyPath: "opacity")
         
-        transitionFadeOut.beginTime = CACurrentMediaTime() + 0 //add delay of 1 second
+        transitionFadeOut.beginTime = CACurrentMediaTime()
         transitionFadeOut.duration = 0.5
         transitionFadeOut.fromValue = 1.0
         transitionFadeOut.toValue = 0.0
@@ -77,13 +54,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         transitionFadeOut.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         
         self.backgroundImageCopy.layer.addAnimation(transitionFadeOut, forKey: "opacity")
-        
         self.backgroundImageCopy.layer.opacity = 0.0
         
         var visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark)) as UIVisualEffectView
         visualEffectView.frame = self.backgroundImageView.bounds
         self.backgroundImageView.addSubview(visualEffectView)
-    
 
         var vibrancy = UIVisualEffectView(effect: UIVibrancyEffect() as UIVibrancyEffect)
         
@@ -95,9 +70,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         vibrancy.frame = self.passwordTextField.bounds
         self.passwordTextField.addSubview(vibrancy)
-        
-
-        
     }
 
     func textFieldShouldEndEditing(textField: UITextField!) -> Bool {
@@ -119,7 +91,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func login(sender: AnyObject) {
-    
+
         SPDispatchAsync({
             self.spotifyController.loginWithUserName(self.usernameTextField.text, andPassword:self.passwordTextField.text)
             
@@ -135,38 +107,24 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if keyPath == "spotifyController.loggedInUser" {
             self.keypath = "spotifyController.loggedInUser"
             self.usernameTextField.text = self.spotifyController.loggedInUser
+            self.successfullLogin = true
             self.shouldPerformSegueWithIdentifier("push", sender: self)
+
         }
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
         if (self.successfullLogin) {
-            
-
-            
+                     
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            var profileViewController = mainStoryboard.instantiateViewControllerWithIdentifier("mainViewController") as mainViewController
+            var mainVC = mainStoryboard.instantiateViewControllerWithIdentifier("mainViewController") as mainViewController
             
-            
-            profileViewController.spotifyController = self.spotifyController
-            
-            self.presentViewController(profileViewController, animated:false, completion: nil)
+            mainVC.spotifyController = self.spotifyController
+            self.presentViewController(mainVC, animated:false, completion: nil)
    
             return true
         }
         return false
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        var profileViewController = mainStoryboard.instantiateViewControllerWithIdentifier("mainViewController") as mainViewController
-        
-        //profileViewController.spotifyController = self.spotifyController
-        
-        
-        
-       // self.presentViewController(profileViewController, animated:true, completion: nil)
     }
     
     func startBackgroundVideo() {
@@ -199,6 +157,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.removeObserver(self, forKeyPath: "spotifyController.loggedInUser")
     }
     
+    /*
+    
     func setSpotifyController()->SpotifyController
     {
         if(spotifyController == nil)
@@ -206,5 +166,5 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             spotifyController = SpotifyController();
         }
         return spotifyController!;
-    }
+    }*/
 }

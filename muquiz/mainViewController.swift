@@ -15,6 +15,8 @@ import GPUImage
 @IBDesignable
 class mainViewController: UIViewController {
     
+    @IBOutlet weak var songTitleLabel: UILabel!
+    @IBOutlet weak var background: UIImageView!
     var mask: CALayer?
     var circle : CAShapeLayer = CAShapeLayer()
     var circleFill : CAShapeLayer = CAShapeLayer()
@@ -30,6 +32,7 @@ class mainViewController: UIViewController {
     
     @IBOutlet weak var ticker: UILabel!
     var stopWatch : MZTimerLabel = MZTimerLabel()
+    @IBOutlet weak var doneButton: UIButton!
     
     @IBOutlet weak var songImageViewCopy: UIImageView!
     @IBOutlet weak var blurryImageView: UIImageView!
@@ -43,88 +46,15 @@ class mainViewController: UIViewController {
     @IBOutlet weak var shuffleImageView: UIImageView!
     @IBOutlet var songImageView : UIImageView!
     @IBOutlet var titleLabel : UILabel!
+
     @IBOutlet var customView : CustomView!
-    
-    
-    /*
-    @IBOutlet var button1 : UIButton!
-    
-    @IBAction func didPushButton1(sender : AnyObject) {
-        var attributed = NSMutableAttributedString(string: self.button1.titleLabel.text, attributes: attributesForChoosenButton)
-        self.button1.titleLabel.attributedText = attributed
-        self.genrePick(self.button1.titleLabel.text)
-        self.startAnimationForSong()
-        
-        self.setCurrentGenreForButton(self.button1)
-
-        
-    }
-    @IBOutlet var button2 : UIButton!
-
-    @IBAction func didPushButton2(sender : AnyObject) {
-        var attributed = NSMutableAttributedString(string: self.button2.titleLabel.text, attributes: attributesForChoosenButton)
-        self.button2.titleLabel.attributedText = attributed
-        self.genrePick(self.button2.titleLabel.text)
-        
-        self.setCurrentGenreForButton(self.button2)
-        self.startAnimationForSong()
-        
-    }
-    @IBOutlet var button3 : UIButton!
-
-    @IBAction func didPushButton3(sender : AnyObject) {
-        var attributed = NSMutableAttributedString(string: self.button3.titleLabel.text, attributes: attributesForChoosenButton)
-        self.button3.titleLabel.attributedText = attributed
-        self.genrePick(self.button3.titleLabel.text)
-        
-        self.setCurrentGenreForButton(self.button3)
-        self.startAnimationForSong()
-    }
-    @IBOutlet var button4 : UIButton!
-    
-    @IBAction func didPushButton4(sender : AnyObject) {
-        var attributed = NSMutableAttributedString(string: self.button4.titleLabel.text, attributes: attributesForChoosenButton)
-        self.button4.titleLabel.attributedText = attributed
-        self.genrePick(self.button4.titleLabel.text)
-        self.startAnimationForSong()
-        
-        self.setCurrentGenreForButton(self.button4)
-    }
-    @IBOutlet var button5 : UIButton!
-    
-    @IBAction func didPushButton5(sender : AnyObject) {
-        var attributed = NSMutableAttributedString(string: self.button5.titleLabel.text, attributes: attributesForChoosenButton)
-        self.button5.titleLabel.attributedText = attributed
-        self.genrePick(self.button5.titleLabel.text)
-        self.startAnimationForSong()
-        
-        self.setCurrentGenreForButton(self.button5)
-    }
-    @IBOutlet var button6 : UIButton!
-
-    @IBAction func didPushButton6(sender : AnyObject) {
-        var attributed = NSMutableAttributedString(string: self.button6.titleLabel.text, attributes: attributesForChoosenButton)
-        self.button6.titleLabel.attributedText = attributed
-        self.genrePick(self.button6.titleLabel.text)
-        self.startAnimationForSong()
-        self.setCurrentGenreForButton(self.button6)
-    }
-
-
-    
-    @IBOutlet var searchImageView : UIImageView!
-    
-    func setCurrentGenreForButton(button : UIButton) {
-        self.currentGenre = button.titleLabel.text
-    }*/
-
     @IBOutlet var playButton : UIButton!
+
     
-    func updateCurrentGenre(genre:String) {
-        self.currentGenre = genre
+    @IBAction func didPushDoneButton(sender: AnyObject) {
+        self.forceEndSong()
     }
     
-
     func setPlaylistUserTop() {
         self.arrayWithSongs.addObjectsFromArray(self.userTopList.tracks)
     }
@@ -133,13 +63,54 @@ class mainViewController: UIViewController {
         self.arrayWithSongs.addObjectsFromArray(self.regionTopList.tracks)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        
+        // Then apply the animation.
+       
+        var animation : CABasicAnimation = CABasicAnimation(keyPath: "opacity")
+        animation.duration = 2.0
+        animation.fromValue = 0.0
+        animation.toValue = 1.0
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        
+        self.songImageView.layer.addAnimation(animation, forKey: "opacity")
+        
+        self.songImageView.layer.opacity = 1.0
+        self.shuffleImageView.layer.opacity = 1.0
+        shuffleImageView.layer.shadowColor = UIColor.blackColor().CGColor;
+        shuffleImageView.layer.shadowOffset = CGSizeMake(0, 1);
+        shuffleImageView.layer.shadowOpacity = 1.0;
+        shuffleImageView.layer.shadowRadius = 1.0;
+        shuffleImageView.clipsToBounds = false;
+    
+        self.songImageView.layer.transform = CATransform3DMakeScale(0.0, 0.0, 0.0)
+        self.shuffleImageView.layer.transform = CATransform3DMakeScale(0.0, 0.0, 0.0)
+        
+        UIView.animateWithDuration(1.0, delay: 0.3, usingSpringWithDamping: 0.4, initialSpringVelocity: 1.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: ({
+            self.songImageView.layer.transform = CATransform3DMakeScale(1.0, 1.0, 1.0)
+            self.shuffleImageView.layer.transform = CATransform3DMakeScale(0.7, 0.7, 0.7)
+        }), completion: nil)
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
+        self.navigationController.navigationBar.hidden = true
+        
+        self.songTitleLabel.alpha = 0.0
+        
         self.stopWatch = MZTimerLabel(label: self.ticker, andTimerType: MZTimerLabelTypeTimer)
         stopWatch.timeFormat = "SS"
         stopWatch.setCountDownTime(30000)
+    
+        var blur:UIBlurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        var effectView:UIVisualEffectView = UIVisualEffectView (effect: blur)
+        effectView.frame = self.background.bounds
+        self.background.addSubview(effectView)
+        
+        var filter : GPUImagePixellateFilter = GPUImagePixellateFilter()
+        self.songImageView.image = filter.imageByFilteringImage(self.songImageView.image)
         
         self.regionTopList = SPToplist(forLocale: SPSession.sharedSession().locale, inSession: SPSession.sharedSession())
         self.userTopList = SPToplist(forCurrentUserInSession: SPSession.sharedSession())
@@ -153,6 +124,7 @@ class mainViewController: UIViewController {
         SPAsyncLoading.waitUntilLoaded(userTopList, timeout: 10.0, then: {(loadedRegionTop, notLoadedRegionTop) in self.setPlaylistRegionTop()})
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "songEndedPlaying:", name: "kSPSongEnded", object: nil)
+        
         self.addObserver(self, forKeyPath:"spotifyController.search.tracks", options: NSKeyValueObservingOptions.New, context: nil)
         
         self.addObserver(self, forKeyPath: "spotifyController.loggedInUser", options: .New, context: nil)
@@ -160,7 +132,7 @@ class mainViewController: UIViewController {
         self.addObserver(self, forKeyPath: "spotifyController.search.playlists", options: .New, context: nil)
         
         // Init first label to start the shuffle
-        attributesForChoosenButton = [NSForegroundColorAttributeName:UIColor.darkGrayColor(), NSStrokeWidthAttributeName:1]
+        //attributesForChoosenButton = [NSForegroundColorAttributeName:UIColor.darkGrayColor(), NSStrokeWidthAttributeName:1]
         //self.currentGenre = self.button1.titleLabel.text
         
         //var attributed = NSMutableAttributedString(string: self.button1.titleLabel.text, attributes: attributesForChoosenButton)
@@ -169,24 +141,16 @@ class mainViewController: UIViewController {
         self.titleLabel.alpha = 0.0
         self.shuffleImageView.alpha = 1.0
         self.result = NSMutableArray()
+        /*
         for item : AnyObject in self.view.subviews {
             if let button = item as? UIButton {
                 button.alpha = 0.0
                 button.layer.transform = CATransform3DMakeScale(0.5, 0.5, 0.5)
             }
-        }
+        }*/
         
-        UIView.animateWithDuration(10.0, delay: 0.9, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.8, options: UIViewAnimationOptions.CurveEaseInOut, animations:{
-            for item : AnyObject in self.view.subviews {
-                if let button = item as? UIButton {
-                    button.alpha = 1.0
-                    button.layer.transform = CATransform3DMakeScale(1.0, 1.0, 1.0)
-                }
-            }
-        }, completion: nil)
-        
+     
         self.songImageView.contentMode = UIViewContentMode.ScaleAspectFill
-        
         
         var radius : CGFloat = songImageView.bounds.size.height/2.0;
         var layer :CAShapeLayer = CAShapeLayer()
@@ -197,54 +161,28 @@ class mainViewController: UIViewController {
         var layerCopy :CAShapeLayer = CAShapeLayer()
         layerCopy.path = UIBezierPath(roundedRect: songImageViewCopy.bounds, cornerRadius: radiusCopy).CGPath
         songImageViewCopy.layer.mask = layerCopy
-        
-         songImageView.image.applyBlurWithRadius(15.0, tintColor: UIColor.whiteColor(), saturationDeltaFactor: 0.5, maskImage: nil)
-        /*
-        var blenddFilter : GPUImageAlphaBlendFilter = GPUImageAlphaBlendFilter()
-        var imageToProcess : GPUImagePicture(i)
-        
-            GPUImageAlphaBlendFilter *blendFilter = [[GPUImageAlphaBlendFilter alloc] init];
-            GPUImagePicture *imageToProcess = [[GPUImagePicture alloc] initWithImage:self.imageToWorkWithView.image];
-            GPUImagePicture *border = [[GPUImagePicture alloc] initWithImage:self.imageBorder];
             
-            blendFilter.mix = 1.0f;
-            [imageToProcess addTarget:blendFilter];
-            [border addTarget:blendFilter];
-            
-            [imageToProcess processImage];
-            self.imageToWorkWithView.image = [blendFilter imageFromCurrentlyProcessedOutput];
-            
-            [blendFilter release];
-            [imageToProcess release];
-            [border release];
-        }*/
-        
-        //var blur:UIBlurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
-        //var effectView:UIVisualEffectView = UIVisualEffectView (effect: blur)
-        //effectView.frame = self.songImageView.bounds
-        
         self.circle.path = UIBezierPath(roundedRect: customView.bounds, cornerRadius: self.songImageView.bounds.size.height/2-15).CGPath
         self.circle.lineWidth = 28.0
         self.circle.strokeColor = UIColor.whiteColor().CGColor
         self.circle.strokeStart = 0.0
         self.circle.strokeEnd = 1.0
-        self.circle.fillColor = self.view.backgroundColor!.CGColor
+        self.circle.fillColor = UIColor.clearColor().CGColor
         
         self.circleFill.path = UIBezierPath(roundedRect: customView.bounds, cornerRadius: self.songImageView.bounds.size.height/2-20).CGPath
         self.circleFill.lineWidth = 15.0
-        self.circleFill.strokeColor = UIColor(red: 255.0/255.0, green: 134.0/255.0, blue: 73.0/255.0, alpha: 1.0).CGColor
+        self.circleFill.strokeColor = UIColor(red: 255.0/255.0, green: 127.0/255.0, blue: 102.0/255.0, alpha: 1.0).CGColor
         self.circleFill.strokeStart = 0.0
         self.circleFill.strokeEnd = 1.0
         self.circleFill.fillColor = UIColor.clearColor().CGColor
-        
-        //self.songImageView.addSubview(effectView)
-        self.songImageView.alpha = 0.5
+
+        self.songImageView.alpha = 1.0
         
         self.customView.layer.addSublayer(circle)
         self.customView.layer.addSublayer(self.circleFill)
 
-        self.customView.alpha = 0.5
-        self.customView.backgroundColor = self.view.backgroundColor
+        self.customView.alpha = 0.8
+        self.customView.backgroundColor = UIColor.clearColor()
     }
     
     @IBAction func didPushPlayButton(sender : AnyObject) {
@@ -267,6 +205,7 @@ class mainViewController: UIViewController {
         if self.arrayWithSongs.count > 0 {
             self.shuffleImageView.alpha = 0.0
             self.titleLabel.alpha = 0.0
+            self.songTitleLabel.alpha = 0.0
             var randomNumber = Int(arc4random_uniform(UInt32(self.arrayWithSongs.count)))
             
             var song : SPTrack = self.arrayWithSongs[randomNumber] as SPTrack
@@ -276,28 +215,18 @@ class mainViewController: UIViewController {
             
             self.addObserver(self, forKeyPath: "currentTrack.album.cover.image", options: .New, context: nil)
             
-            self.titleLabel.text = song.name + " by " + song.artists[0].name
+            self.titleLabel.text = " by " + song.artists[0].name
             
-            var filter : GPUImagePixellateFilter = GPUImagePixellateFilter()
+            self.songTitleLabel.text = song.name
             
-            
-            
-            var image : SPImage = song.album.cover as SPImage
-            var coverImage:SPImage! = song.album.cover
+            var coverImage : SPImage! = song.album.cover
             var loadedTrack : SPImage!
             var notLoaded : SPImage!
+            
             SPAsyncLoading.waitUntilLoaded(coverImage, timeout: 10.0, then: {(
                 loadedTrack, notLoaded) in self.setCoverImageAndPlaySong(coverImage.image, song: song)}
             )
-            
-            for item : AnyObject in self.view.subviews {
-                if let button = item as? UIButton {
-                    button.enabled = false
-                }
-            }
         }
-        
-
     }
     
     override func didReceiveMemoryWarning() {
@@ -305,19 +234,16 @@ class mainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func initWithTrack(track:Track) {
-        self.currentTrackTitle = track.title
-        self.currentTrackImage = track.cover
-    }
-    
     func startAnimationForSong() {
 
         self.playButton.hidden = true
+        self.doneButton.hidden = false
+        self.playButton.enabled = false
+        self.doneButton.enabled = true
         self.circleFill.strokeStart = 0.0
         
         // Change the model layer's property first.
         self.circleFill.strokeEnd = 0.0;
-        self.circleFill.strokeColor = UIColor.orangeColor().CGColor
         
         // Then apply the animation.
         var animation : CABasicAnimation = CABasicAnimation(keyPath: "strokeEnd")
@@ -327,20 +253,11 @@ class mainViewController: UIViewController {
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         
         self.circleFill.addAnimation(animation, forKey: "strokeEnd")
-
-        var colorAnimation : CABasicAnimation = CABasicAnimation(keyPath: "strokeColor")
-        colorAnimation.fromValue = UIColor.redColor().CGColor
-        colorAnimation.toValue = UIColor.orangeColor()
-        colorAnimation.duration = 30
-        colorAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        
-        self.circleFill.addAnimation(colorAnimation, forKey: "strokeColor")
         
         self.songImageViewCopy.layer.opacity = 1.0
         
         let transitionFadeOut = CABasicAnimation(keyPath: "opacity")
         
-       // transitionFadeOut.beginTime = CACurrentMediaTime() //add delay of 1 second
         transitionFadeOut.duration = 30
         transitionFadeOut.fromValue = 1.0
         transitionFadeOut.toValue = 0.0
@@ -377,12 +294,7 @@ class mainViewController: UIViewController {
         
         if keyPath == "spotifyController.search.playlists"{
             self.pickRandomSong()
-            
         }
-        
-        //if keyPath == "spotifyController.search.tracks.album.cover" {
-         //   self.songImageView.image = self.track?.cover
-       // }
     }
     
     func chooseRandomSongForGenre(genre : String) {
@@ -400,10 +312,6 @@ class mainViewController: UIViewController {
             self.addObserver(self, forKeyPath: "currentTrack.album.cover.image", options: .New, context: nil)
             
             self.titleLabel.text = song.name + " by " + song.artists[0].name
-            
-            var filter : GPUImagePixellateFilter = GPUImagePixellateFilter()
-
-
             
             var image : SPImage = song.album.cover as SPImage
             var coverImage:SPImage! = song.album.cover
@@ -423,17 +331,16 @@ class mainViewController: UIViewController {
     }
     
     func setCoverImageAndPlaySong(coverImage:UIImage, song:SPTrack) {
+        
+        self.doneButton.hidden = false
         var filter : GPUImagePixellateFilter = GPUImagePixellateFilter()
+        self.currentTrackImage = song.album.cover.image
+        self.songImageViewCopy.image = filter.imageByFilteringImage(song.album.cover.image)
+        self.songImageViewCopy.layer.opacity = 1.0
+        self.songImageViewCopy.hidden = false
         
         self.songImageView.image = song.album.cover.image
-        self.songImageViewCopy.image = song.album.cover.image
-        self.songImageViewCopy.image = filter.imageByFilteringImage(self.songImageViewCopy.image)
-        self.songImageViewCopy.alpha = 1.0
-        self.songImageViewCopy.layer.opacity = 1.0
-        self.blurryImageView.image = filter.imageByFilteringImage(self.blurryImageView.image)
-        self.titleLabel.alpha = 1.0
         
-
         stopWatch.start()
         
         self.spotifyController.startAndStop(song, after : 30)
@@ -445,32 +352,33 @@ class mainViewController: UIViewController {
         self.removeObserver(self, forKeyPath: "spotifyController.search.playlists")
         self.removeObserver(self, forKeyPath: "spotifyController.loggedInUser")
         self.removeObserver(self, forKeyPath: "currentTrack.album.cover.image")
-        //self.removeObserver(self, forKeyPath: "spotifyController.search.tracks.album.cover")
     }
-
-    /*
-    // #pragma mark - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     @IBAction func logOut(sender : AnyObject) {
 
         self.spotifyController.logOut()
     }
 
+    func forceEndSong() {
+        self.playButton.enabled = true
+        self.doneButton.enabled = false
+        
+        self.circleFill.removeAllAnimations()
+        self.songImageViewCopy.layer.removeAllAnimations()
+        
+        self.circleFill.strokeEnd = 0.0;
+        self.circleFill.fillColor = UIColor.clearColor().CGColor
+        
+        self.spotifyController.pause(self.currentTrack)
+ 
+    }
+    
     func songEndedPlaying(notification: NSNotification){
-        for item : AnyObject in self.view.subviews {
-            if let button = item as? UIButton {
-                button.enabled = true
-            }
-        }
+        self.playButton.enabled = true
+        self.doneButton.enabled = false
         
         self.shuffleImageView.layer.opacity = 0.0
+
         let opacityAnimation = CABasicAnimation(keyPath: "opacity")
         opacityAnimation.fromValue = NSNumber.numberWithFloat(0.0)
         opacityAnimation.toValue = NSNumber.numberWithFloat(1.0)
@@ -488,13 +396,18 @@ class mainViewController: UIViewController {
         keyFrameAnimation.values = [initalBounds, secondBounds, finalBounds]
         keyFrameAnimation.keyTimes = [0, 0.4, 0.5]
         keyFrameAnimation.timingFunctions = [CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut), CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)]
+        
         self.shuffleImageView.layer.addAnimation(keyFrameAnimation, forKey: "bounds")
-
+        
+        self.background.image = self.currentTrackImage
         self.titleLabel.layer.addAnimation(opacityAnimation, forKey: "opacity")
+        self.songTitleLabel.layer.addAnimation(opacityAnimation, forKey: "opacity")
 
         self.shuffleImageView.layer.opacity = 1.0
         self.titleLabel.layer.opacity = 1.0
+        self.songTitleLabel.layer.opacity = 1.0
         self.playButton.hidden = false
+        self.doneButton.hidden = true
         self.stopWatch.reset()
     }
 }
