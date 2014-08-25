@@ -107,71 +107,53 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x5s-MX-49P" userLabel="bg_image_1_copy.jpg">
                                 <rect key="frame" x="40" y="120" width="240" height="240"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ojJ-oJ-MBE">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ojJ-oJ-MBE">
                                 <rect key="frame" x="150" y="403" width="73" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
                                 <state key="normal" title="eurodance">
                                     <color key="titleColor" red="0.86666666670000003" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="didPushButton2:" destination="Rx5-YW-Y4u" eventType="touchUpInside" id="fJs-Ow-3Rs"/>
-                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wGg-Ae-tFj">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wGg-Ae-tFj">
                                 <rect key="frame" x="227" y="403" width="73" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
                                 <state key="normal" title="britpop">
                                     <color key="titleColor" red="0.86666666670000003" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="didPushButton3:" destination="Rx5-YW-Y4u" eventType="touchUpInside" id="2rM-lH-zdu"/>
-                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLV-ek-hu4">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLV-ek-hu4">
                                 <rect key="frame" x="201" y="450" width="99" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
                                 <state key="normal" title="ambient fusion">
                                     <color key="titleColor" red="0.86666666670000003" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="didPushButton6:" destination="Rx5-YW-Y4u" eventType="touchUpInside" id="vY0-NS-o6I"/>
-                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GXI-FM-Aou">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GXI-FM-Aou">
                                 <rect key="frame" x="133" y="450" width="60" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
                                 <state key="normal" title="acid jazz">
                                     <color key="titleColor" red="0.86666666670000003" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="didPushButton5:" destination="Rx5-YW-Y4u" eventType="touchUpInside" id="5YE-Rc-Bal"/>
-                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9d-Z7-3uc">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9d-Z7-3uc">
                                 <rect key="frame" x="20" y="450" width="105" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
                                 <state key="normal" title="minimal techno">
                                     <color key="titleColor" red="0.86666666670000003" green="0.49803921569999998" blue="0.49803921569999998" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="didPushButton4:" destination="Rx5-YW-Y4u" eventType="touchUpInside" id="6PD-Y0-WRZ"/>
-                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aA1-WM-XoW">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aA1-WM-XoW">
                                 <rect key="frame" x="20" y="403" width="122" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
                                 <state key="normal" title="underground hip hop">
                                     <color key="titleColor" red="0.8666666666666667" green="0.49803921568627452" blue="0.49803921568627452" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="didPushButton1:" destination="Rx5-YW-Y4u" eventType="touchUpInside" id="6Z3-Nh-TNI"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YhE-j8-mdR">
                                 <rect key="frame" x="48" y="126" width="232" height="234"/>
@@ -179,12 +161,12 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="didPushPlayButton:" destination="Rx5-YW-Y4u" eventType="touchUpInside" id="Is6-cK-T2E"/>
+                                    <action selector="didPushPlayButton:" destination="Rx5-YW-Y4u" eventType="touchUpInside" id="fXN-CC-vjB"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6NJ-hC-uIQ">
                                 <rect key="frame" x="20" y="40" width="280" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -206,12 +188,6 @@
                     <navigationItem key="navigationItem" id="JLb-fB-CZ2"/>
                     <connections>
                         <outlet property="blurryImageView" destination="P2m-ZX-x4u" id="clO-am-TiA"/>
-                        <outlet property="button1" destination="aA1-WM-XoW" id="wcj-YF-eYj"/>
-                        <outlet property="button2" destination="ojJ-oJ-MBE" id="8DI-aD-74E"/>
-                        <outlet property="button3" destination="wGg-Ae-tFj" id="PON-ut-87K"/>
-                        <outlet property="button4" destination="w9d-Z7-3uc" id="dlq-Tu-goQ"/>
-                        <outlet property="button5" destination="GXI-FM-Aou" id="xlH-a5-vBb"/>
-                        <outlet property="button6" destination="oLV-ek-hu4" id="nFl-y7-xwl"/>
                         <outlet property="customView" destination="2iA-Tx-TlH" id="GXP-ZA-2Ba"/>
                         <outlet property="playButton" destination="YhE-j8-mdR" id="8lG-nX-Fhs"/>
                         <outlet property="shuffleImageView" destination="JhJ-C5-Xv3" id="uZK-xQ-wN6"/>

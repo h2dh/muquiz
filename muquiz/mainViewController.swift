@@ -45,6 +45,8 @@ class mainViewController: UIViewController {
     @IBOutlet var titleLabel : UILabel!
     @IBOutlet var customView : CustomView!
     
+    
+    /*
     @IBOutlet var button1 : UIButton!
     
     @IBAction func didPushButton1(sender : AnyObject) {
@@ -107,11 +109,14 @@ class mainViewController: UIViewController {
         self.startAnimationForSong()
         self.setCurrentGenreForButton(self.button6)
     }
+
+
+    
     @IBOutlet var searchImageView : UIImageView!
     
     func setCurrentGenreForButton(button : UIButton) {
         self.currentGenre = button.titleLabel.text
-    }
+    }*/
 
     @IBOutlet var playButton : UIButton!
     
@@ -119,26 +124,36 @@ class mainViewController: UIViewController {
         self.currentGenre = genre
     }
     
-    func setPlaylist() {
+
+    func setPlaylistUserTop() {
         self.arrayWithSongs.addObjectsFromArray(self.userTopList.tracks)
+    }
+    
+    func setPlaylistRegionTop() {
+        self.arrayWithSongs.addObjectsFromArray(self.regionTopList.tracks)
     }
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
         self.stopWatch = MZTimerLabel(label: self.ticker, andTimerType: MZTimerLabelTypeTimer)
         stopWatch.timeFormat = "SS"
         stopWatch.setCountDownTime(30000)
+        
         self.regionTopList = SPToplist(forLocale: SPSession.sharedSession().locale, inSession: SPSession.sharedSession())
         self.userTopList = SPToplist(forCurrentUserInSession: SPSession.sharedSession())
         
-        var loaded :SPToplist!
-        var notLoaded:SPToplist!
-        SPAsyncLoading.waitUntilLoaded(userTopList, timeout: 10.0, then: {(loaded, notLoaded) in self.setPlaylist()})
+        var loadedUserTop :SPToplist!
+        var notLoadedUserTop:SPToplist!
+        SPAsyncLoading.waitUntilLoaded(userTopList, timeout: 10.0, then: {(loadedUserTop, notLoadedUserTop) in self.setPlaylistUserTop()})
+        
+        var loadedRegionTop :SPToplist!
+        var notLoadedRegionTop:SPToplist!
+        SPAsyncLoading.waitUntilLoaded(userTopList, timeout: 10.0, then: {(loadedRegionTop, notLoadedRegionTop) in self.setPlaylistRegionTop()})
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "songEndedPlaying:", name: "kSPSongEnded", object: nil)
         self.addObserver(self, forKeyPath:"spotifyController.search.tracks", options: NSKeyValueObservingOptions.New, context: nil)
-        
         
         self.addObserver(self, forKeyPath: "spotifyController.loggedInUser", options: .New, context: nil)
         
@@ -146,10 +161,10 @@ class mainViewController: UIViewController {
         
         // Init first label to start the shuffle
         attributesForChoosenButton = [NSForegroundColorAttributeName:UIColor.darkGrayColor(), NSStrokeWidthAttributeName:1]
-        self.currentGenre = self.button1.titleLabel.text
+        //self.currentGenre = self.button1.titleLabel.text
         
-        var attributed = NSMutableAttributedString(string: self.button1.titleLabel.text, attributes: attributesForChoosenButton)
-        self.button1.titleLabel.attributedText = attributed
+        //var attributed = NSMutableAttributedString(string: self.button1.titleLabel.text, attributes: attributesForChoosenButton)
+       // self.button1.titleLabel.attributedText = attributed
         
         self.titleLabel.alpha = 0.0
         self.shuffleImageView.alpha = 1.0
@@ -184,6 +199,25 @@ class mainViewController: UIViewController {
         songImageViewCopy.layer.mask = layerCopy
         
          songImageView.image.applyBlurWithRadius(15.0, tintColor: UIColor.whiteColor(), saturationDeltaFactor: 0.5, maskImage: nil)
+        /*
+        var blenddFilter : GPUImageAlphaBlendFilter = GPUImageAlphaBlendFilter()
+        var imageToProcess : GPUImagePicture(i)
+        
+            GPUImageAlphaBlendFilter *blendFilter = [[GPUImageAlphaBlendFilter alloc] init];
+            GPUImagePicture *imageToProcess = [[GPUImagePicture alloc] initWithImage:self.imageToWorkWithView.image];
+            GPUImagePicture *border = [[GPUImagePicture alloc] initWithImage:self.imageBorder];
+            
+            blendFilter.mix = 1.0f;
+            [imageToProcess addTarget:blendFilter];
+            [border addTarget:blendFilter];
+            
+            [imageToProcess processImage];
+            self.imageToWorkWithView.image = [blendFilter imageFromCurrentlyProcessedOutput];
+            
+            [blendFilter release];
+            [imageToProcess release];
+            [border release];
+        }*/
         
         //var blur:UIBlurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
         //var effectView:UIVisualEffectView = UIVisualEffectView (effect: blur)

@@ -53,6 +53,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         self.backgroundImageCopy.image = filteredImage
         
+        
         //var transition: CATransition = CATransition()
    /*
         let transition = CABasicAnimation(keyPath: "opacity")
@@ -79,11 +80,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         self.backgroundImageCopy.layer.opacity = 0.0
         
-        //self.backgroundImageView.image.applyLightEffect()
-        //var visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light)) as UIVisualEffectView
-        //visualEffectView.frame = self.backgroundImageView.bounds
-        //self.backgroundImageView.addSubview(visualEffectView)
-        
+        var visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark)) as UIVisualEffectView
+        visualEffectView.frame = self.backgroundImageView.bounds
+        self.backgroundImageView.addSubview(visualEffectView)
+    
 
         var vibrancy = UIVisualEffectView(effect: UIVibrancyEffect() as UIVibrancyEffect)
         
