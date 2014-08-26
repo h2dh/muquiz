@@ -75,7 +75,7 @@
     } else {
         self.successfullLogin = NO;
     }
-    
+
 }
 
 -(void)loginWithUserName:(NSString *)userName andPassword:(NSString *)password

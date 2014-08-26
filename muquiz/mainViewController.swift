@@ -352,6 +352,8 @@ class mainViewController: UIViewController {
         self.removeObserver(self, forKeyPath: "spotifyController.search.playlists")
         self.removeObserver(self, forKeyPath: "spotifyController.loggedInUser")
         self.removeObserver(self, forKeyPath: "currentTrack.album.cover.image")
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     @IBAction func logOut(sender : AnyObject) {

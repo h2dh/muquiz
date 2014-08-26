@@ -70,6 +70,7 @@
                         <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="dOg-WN-Zvy"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="480"/>
                     <connections>
@@ -85,7 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="222" y="251"/>
+            <point key="canvasLocation" x="88" y="319"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="D6C-Pt-vov">
@@ -222,6 +223,7 @@
                         <color key="backgroundColor" red="0.59999999999999998" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="JLb-fB-CZ2"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="background" destination="geX-o7-F8X" id="wu5-wK-sCP"/>
                         <outlet property="blurryImageView" destination="x5s-MX-49P" id="YA7-0K-yMH"/>
