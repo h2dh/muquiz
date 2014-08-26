@@ -38,6 +38,8 @@ class mainViewController: UIViewController {
     @IBOutlet weak var blurryImageView: UIImageView!
     var currentTrack:SPTrack = SPTrack()
     
+    var isObservingAlbum : Bool = false
+    
     var result : NSMutableArray!
     var attributesForChoosenButton : NSDictionary!
     
@@ -96,7 +98,7 @@ class mainViewController: UIViewController {
         
         super.viewDidLoad()
         
-        self.navigationController.navigationBar.hidden = true
+        //self.navigationController.navigationBar.hidden = true
         
         self.songTitleLabel.alpha = 0.0
         
@@ -214,6 +216,7 @@ class mainViewController: UIViewController {
             self.currentTrack = song
             
             self.addObserver(self, forKeyPath: "currentTrack.album.cover.image", options: .New, context: nil)
+            self.isObservingAlbum = true
             
             self.titleLabel.text = " by " + song.artists[0].name
             
@@ -351,7 +354,10 @@ class mainViewController: UIViewController {
         self.removeObserver(self, forKeyPath: "spotifyController.search.tracks")
         self.removeObserver(self, forKeyPath: "spotifyController.search.playlists")
         self.removeObserver(self, forKeyPath: "spotifyController.loggedInUser")
-        self.removeObserver(self, forKeyPath: "currentTrack.album.cover.image")
+        
+        if self.isObservingAlbum {
+            self.removeObserver(self, forKeyPath: "currentTrack.album.cover.image")
+        }
         
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }

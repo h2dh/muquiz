@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.rootViewController = UINavigationController()
         var rootViewController = self.window!.rootViewController as UINavigationController
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        
+        rootViewController.navigationBarHidden = true
         if (self.spotifyController.successfullLogin) {
             let mainVC :mainViewController = mainStoryboard.instantiateViewControllerWithIdentifier("mainViewController") as mainViewController
             mainVC.spotifyController = self.spotifyController

@@ -22,17 +22,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var passwordHintLabel : UILabel!
     @IBOutlet var backgroundImageView : UIImageView!
     
-    var spotifyController : SpotifyController!
+    var spotifyController : SpotifyController = SpotifyController()
     var successfullLogin : Bool = false
     var keypath : String = ""
     
+    override func viewWillAppear(animated: Bool) {
+        self.addObserver(self, forKeyPath: "spotifyController.loggedInUser", options: .New, context: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.addObserver(self, forKeyPath: "spotifyController.loggedInUser", options: .New, context: nil)
-        
-        self.navigationController.navigationBar.hidden = true
+        //self.navigationController.navigationBar.hidden = true
         
         self.usernameTextField.addTarget(self, action: Selector("textFieldShouldEndEditing:"), forControlEvents: UIControlEvents.EditingChanged)
         self.passwordTextField.addTarget(self, action: Selector("textFieldShouldEndEditing:"), forControlEvents: UIControlEvents.EditingChanged)
@@ -157,7 +158,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.removeObserver(self, forKeyPath: "spotifyController.loggedInUser")
     }
     
-    /*
+    
     
     func setSpotifyController()->SpotifyController
     {
@@ -165,6 +166,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         {
             spotifyController = SpotifyController();
         }
-        return spotifyController!;
-    }*/
+        return spotifyController;
+    }
 }
