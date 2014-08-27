@@ -53,10 +53,10 @@ import MediaPlayer
         backgroundImageView.alpha = 0.0;
         
         // Animate
-        UIView.animateWithDuration(5.0,
+        UIView.animateWithDuration(1.0,
             delay: 0.0,
-            usingSpringWithDamping: 0.6,
-            initialSpringVelocity: 0.0,
+            usingSpringWithDamping: 0.8,
+            initialSpringVelocity: 30.0,
             options: UIViewAnimationOptions.CurveLinear,
             animations: {
                 destinationViewController.view.transform = CGAffineTransformIdentity

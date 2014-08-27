@@ -39,6 +39,7 @@ class mainViewController: UIViewController {
     var currentTrack:SPTrack = SPTrack()
     
     var isObservingAlbum : Bool = false
+    @IBOutlet weak var logoImageView: UIImageView!
     
     var result : NSMutableArray!
     var attributesForChoosenButton : NSDictionary!
@@ -48,7 +49,7 @@ class mainViewController: UIViewController {
     @IBOutlet weak var shuffleImageView: UIImageView!
     @IBOutlet var songImageView : UIImageView!
     @IBOutlet var titleLabel : UILabel!
-
+    @IBOutlet var vinylImage: UIImageView!
     @IBOutlet var customView : CustomView!
     @IBOutlet var playButton : UIButton!
 
@@ -59,6 +60,7 @@ class mainViewController: UIViewController {
     
     func setPlaylistUserTop() {
         self.arrayWithSongs.addObjectsFromArray(self.userTopList.tracks)
+       
     }
     
     func setPlaylistRegionTop() {
@@ -75,7 +77,7 @@ class mainViewController: UIViewController {
         animation.toValue = 1.0
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         
-        self.songImageView.layer.addAnimation(animation, forKey: "opacity")
+        //self.songImageView.layer.addAnimation(animation, forKey: "opacity")
         
         self.songImageView.layer.opacity = 1.0
         self.shuffleImageView.layer.opacity = 1.0
@@ -87,10 +89,12 @@ class mainViewController: UIViewController {
     
         self.songImageView.layer.transform = CATransform3DMakeScale(0.0, 0.0, 0.0)
         self.shuffleImageView.layer.transform = CATransform3DMakeScale(0.0, 0.0, 0.0)
+        self.vinylImage.layer.transform = CATransform3DMakeScale(0.0, 0.0, 0.0)
         
         UIView.animateWithDuration(1.0, delay: 0.3, usingSpringWithDamping: 0.4, initialSpringVelocity: 1.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: ({
             self.songImageView.layer.transform = CATransform3DMakeScale(1.0, 1.0, 1.0)
             self.shuffleImageView.layer.transform = CATransform3DMakeScale(0.7, 0.7, 0.7)
+            self.vinylImage.layer.transform = CATransform3DMakeScale(1.0, 1.0, 1.0)
         }), completion: nil)
     }
     
@@ -98,6 +102,13 @@ class mainViewController: UIViewController {
         
         super.viewDidLoad()
         
+        self.vinylImage.layer.shadowColor = UIColor.blackColor().CGColor
+        vinylImage.layer.shadowColor = UIColor.blackColor().CGColor;
+        vinylImage.layer.shadowOffset = CGSizeMake(0, 1);
+        vinylImage.layer.shadowOpacity = 1.0;
+        vinylImage.layer.shadowRadius = 1.0;
+        vinylImage.clipsToBounds = false;
+
         //self.navigationController.navigationBar.hidden = true
         
         self.songTitleLabel.alpha = 0.0
@@ -154,6 +165,7 @@ class mainViewController: UIViewController {
      
         self.songImageView.contentMode = UIViewContentMode.ScaleAspectFill
         
+       
         var radius : CGFloat = songImageView.bounds.size.height/2.0;
         var layer :CAShapeLayer = CAShapeLayer()
         layer.path = UIBezierPath(roundedRect: songImageView.bounds, cornerRadius: radius).CGPath
@@ -163,7 +175,10 @@ class mainViewController: UIViewController {
         var layerCopy :CAShapeLayer = CAShapeLayer()
         layerCopy.path = UIBezierPath(roundedRect: songImageViewCopy.bounds, cornerRadius: radiusCopy).CGPath
         songImageViewCopy.layer.mask = layerCopy
-            
+        
+        
+        
+         /*
         self.circle.path = UIBezierPath(roundedRect: customView.bounds, cornerRadius: self.songImageView.bounds.size.height/2-15).CGPath
         self.circle.lineWidth = 28.0
         self.circle.strokeColor = UIColor.whiteColor().CGColor
@@ -177,7 +192,7 @@ class mainViewController: UIViewController {
         self.circleFill.strokeStart = 0.0
         self.circleFill.strokeEnd = 1.0
         self.circleFill.fillColor = UIColor.clearColor().CGColor
-
+*/
         self.songImageView.alpha = 1.0
         
         self.customView.layer.addSublayer(circle)
@@ -244,10 +259,21 @@ class mainViewController: UIViewController {
         self.playButton.enabled = false
         self.doneButton.enabled = true
         self.circleFill.strokeStart = 0.0
+        self.logoImageView.layer.opacity = 1.0
         
         // Change the model layer's property first.
         self.circleFill.strokeEnd = 0.0;
         
+        var rotation : CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+        rotation.toValue = NSNumber(double: M_PI*2.0)
+        rotation.duration = 30
+        
+        self.vinylImage.layer.addAnimation(rotation, forKey: "rotationAnimation")
+        self.songImageView.layer.addAnimation(rotation, forKey: "rotationAnimation")
+        self.songImageViewCopy.layer.addAnimation(rotation, forKey: "rotationAnimation")
+        
+        /*
+    
         // Then apply the animation.
         var animation : CABasicAnimation = CABasicAnimation(keyPath: "strokeEnd")
         animation.duration = 30
@@ -256,7 +282,7 @@ class mainViewController: UIViewController {
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         
         self.circleFill.addAnimation(animation, forKey: "strokeEnd")
-        
+        */
         self.songImageViewCopy.layer.opacity = 1.0
         
         let transitionFadeOut = CABasicAnimation(keyPath: "opacity")
@@ -290,6 +316,11 @@ class mainViewController: UIViewController {
         if keyPath == "spotifyController.loggedInUser" {
             self.titleLabel.text = self.spotifyController.loggedInUser
         }
+        
+        if keyPath == "spotifyController.loggedOutUser" {
+            self.spotifyController = nil;
+        }
+        
         
         if keyPath == "currentTrack.album.cover.image" {
             self.songImageView.image = self.currentTrack.album.cover.image
@@ -365,6 +396,8 @@ class mainViewController: UIViewController {
     @IBAction func logOut(sender : AnyObject) {
 
         self.spotifyController.logOut()
+        self.view.hidden = true
+
     }
 
     func forceEndSong() {
@@ -373,6 +406,8 @@ class mainViewController: UIViewController {
         
         self.circleFill.removeAllAnimations()
         self.songImageViewCopy.layer.removeAllAnimations()
+        self.songImageView.layer.removeAllAnimations()
+        self.vinylImage.layer.removeAllAnimations()
         
         self.circleFill.strokeEnd = 0.0;
         self.circleFill.fillColor = UIColor.clearColor().CGColor
@@ -385,12 +420,21 @@ class mainViewController: UIViewController {
         self.playButton.enabled = true
         self.doneButton.enabled = false
         
+        self.logoImageView.layer.opacity = 0.0;
+        let fadeOutAnimation = CABasicAnimation(keyPath: "opacity")
+        fadeOutAnimation.fromValue = NSNumber.numberWithFloat(1.0)
+        fadeOutAnimation.toValue = NSNumber.numberWithFloat(0.0)
+        fadeOutAnimation.duration = 0.3
+        
+        self.logoImageView.layer.addAnimation(fadeOutAnimation, forKey: "opacity")
+        self.logoImageView.layer.opacity = 0.0
+        
         self.shuffleImageView.layer.opacity = 0.0
 
         let opacityAnimation = CABasicAnimation(keyPath: "opacity")
         opacityAnimation.fromValue = NSNumber.numberWithFloat(0.0)
         opacityAnimation.toValue = NSNumber.numberWithFloat(1.0)
-        opacityAnimation.duration = 0.5
+        opacityAnimation.duration = 0.3
         
         self.shuffleImageView.layer.addAnimation(opacityAnimation, forKey: "opacity")
         self.shuffleImageView.layer.opacity = 1.0

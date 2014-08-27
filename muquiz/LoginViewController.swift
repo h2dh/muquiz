@@ -34,7 +34,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         //self.navigationController.navigationBar.hidden = true
-        
+    
         self.usernameTextField.addTarget(self, action: Selector("textFieldShouldEndEditing:"), forControlEvents: UIControlEvents.EditingChanged)
         self.passwordTextField.addTarget(self, action: Selector("textFieldShouldEndEditing:"), forControlEvents: UIControlEvents.EditingChanged)
         
@@ -57,9 +57,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.backgroundImageCopy.layer.addAnimation(transitionFadeOut, forKey: "opacity")
         self.backgroundImageCopy.layer.opacity = 0.0
         
-        var visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark)) as UIVisualEffectView
-        visualEffectView.frame = self.backgroundImageView.bounds
-        self.backgroundImageView.addSubview(visualEffectView)
+        //var visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark)) as UIVisualEffectView
+        //visualEffectView.frame = self.backgroundImageView.bounds
+        //self.backgroundImageView.addSubview(visualEffectView)
 
         var vibrancy = UIVisualEffectView(effect: UIVibrancyEffect() as UIVibrancyEffect)
         
@@ -71,6 +71,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         vibrancy.frame = self.passwordTextField.bounds
         self.passwordTextField.addSubview(vibrancy)
+        
     }
 
     func textFieldShouldEndEditing(textField: UITextField!) -> Bool {
@@ -95,9 +96,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
         SPDispatchAsync({
             self.spotifyController.loginWithUserName(self.usernameTextField.text, andPassword:self.passwordTextField.text)
-            
             dispatch_async(dispatch_get_main_queue(), {
                 self.successfullLogin = true
+                self.usernameTextField.text = self.spotifyController.loggedInUser
             })
         })
         
@@ -122,6 +123,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
             mainVC.spotifyController = self.spotifyController
             self.presentViewController(mainVC, animated:false, completion: nil)
+            self.successfullLogin = false;
+            self.removeObserver(self, forKeyPath: "spotifyController.loggedInUser")
    
             return true
         }
@@ -150,15 +153,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             playerLayer.frame = self.view!.bounds
             self.view.layer.addSublayer(playerLayer)
         }
-        
-
     }
-
-    override func viewDidDisappear(animated: Bool) {
-        self.removeObserver(self, forKeyPath: "spotifyController.loggedInUser")
-    }
-    
-    
     
     func setSpotifyController()->SpotifyController
     {
