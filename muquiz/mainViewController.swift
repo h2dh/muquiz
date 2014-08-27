@@ -30,6 +30,7 @@ class mainViewController: UIViewController {
     var userTopList : SPToplist = SPToplist();
     var regionTopList : SPToplist = SPToplist();
     
+    @IBOutlet weak var stopImageVIew: UIImageView!
     @IBOutlet weak var ticker: UILabel!
     var stopWatch : MZTimerLabel = MZTimerLabel()
     @IBOutlet weak var doneButton: UIButton!
