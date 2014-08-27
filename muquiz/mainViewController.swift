@@ -393,13 +393,7 @@ class mainViewController: UIViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
-        if(identifier == "logoutsegue")
-        {
 
-        }
-        return true;
-    }
     
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
         if(segue.identifier == "logoutsegue")
