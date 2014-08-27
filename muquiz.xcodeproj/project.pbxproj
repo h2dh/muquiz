@@ -14,7 +14,6 @@
 		982D467619A0D26B003C9583 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 982D467519A0D26B003C9583 /* CoreAudio.framework */; };
 		982D467819A0D275003C9583 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 982D467719A0D275003C9583 /* AudioToolbox.framework */; };
 		98612B4919995DF400865193 /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98612B4819995DF400865193 /* mainViewController.swift */; };
-		987140F71993D4B2009E14A3 /* bg_image_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 987140F61993D4B2009E14A3 /* bg_image_1.jpg */; };
 		987725CC19A545FC0046D73F /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 987725CB19A545FC0046D73F /* UIImage+ImageEffects.m */; };
 		9881D4AD199EC10800F40D3D /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9881D4AC199EC10800F40D3D /* CustomView.swift */; };
 		9881D4AF199F495100F40D3D /* round_mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 9881D4AE199F495100F40D3D /* round_mask.png */; };
@@ -22,7 +21,6 @@
 		98830D8D19A109BE001768B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98830D8C19A109BE001768B8 /* UIKit.framework */; };
 		98830D8F19A109CA001768B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98830D8E19A109CA001768B8 /* Foundation.framework */; };
 		98830D9119A109D4001768B8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98830D9019A109D4001768B8 /* CoreGraphics.framework */; };
-		98830E8619A11A19001768B8 /* libCocoaLibSpotify.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98830E8119A119D5001768B8 /* libCocoaLibSpotify.a */; };
 		98830E8819A143D7001768B8 /* shuffle.png in Resources */ = {isa = PBXBuildFile; fileRef = 98830E8719A143D7001768B8 /* shuffle.png */; };
 		98A11E6D19A0E0AB00CD2426 /* UserCredentialsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A11E6C19A0E0AB00CD2426 /* UserCredentialsHelper.m */; };
 		98A11E7119A0E0E400CD2426 /* AuthenticationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 98A11E7019A0E0E400CD2426 /* AuthenticationModel.m */; };
@@ -57,7 +55,6 @@
 		98F2616219AE715F0089235C /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F2616119AE715F0089235C /* login.png */; };
 		98F2616719AE72070089235C /* login2.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F2616619AE72070089235C /* login2.png */; };
 		98F2616919AE75150089235C /* point.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F2616819AE75150089235C /* point.png */; };
-		98F830AD19A7912400D8AB51 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98F830A819A790DC00D8AB51 /* GPUImage.framework */; };
 		98F830B019AA705A00D8AB51 /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F830AF19AA705A00D8AB51 /* white.png */; };
 		98FBE54019A16543007B1D2E /* InsetBlurModalSeque.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FBE53F19A16543007B1D2E /* InsetBlurModalSeque.swift */; };
 		98FE04CB19AD2FBF006F7758 /* vinyl.png in Resources */ = {isa = PBXBuildFile; fileRef = 98FE04CA19AD2FBF006F7758 /* vinyl.png */; };
@@ -65,23 +62,12 @@
 		98FE04D419AD34F2006F7758 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 98FE04D119AD34F2006F7758 /* stop.png */; };
 		98FE04D519AD34F2006F7758 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 98FE04D219AD34F2006F7758 /* play.png */; };
 		98FE04D619AD34F2006F7758 /* pointer.png in Resources */ = {isa = PBXBuildFile; fileRef = 98FE04D319AD34F2006F7758 /* pointer.png */; };
+		A8F6EF3419AE76D7008625BB /* bg_image_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8F6EF3319AE76D7008625BB /* bg_image_1.jpg */; };
+		A8F6EF4E19AE77C5008625BB /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8F6EF4719AE76FA008625BB /* GPUImage.framework */; };
+		A8F6EF4F19AE77C5008625BB /* libCocoaLibSpotify.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A8F6EF3B19AE76E3008625BB /* libCocoaLibSpotify.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		98830E8019A119D5001768B8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 98830E7B19A119D5001768B8 /* CocoaLibSpotify iOS Library.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 50AF49DC1439CBFE00E4A5EF;
-			remoteInfo = CocoaLibSpotify;
-		};
-		98830E8219A119D5001768B8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 98830E7B19A119D5001768B8 /* CocoaLibSpotify iOS Library.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 50D4F52B156BCDE800E237DD;
-			remoteInfo = CocoaLSTests;
-		};
 		98CA51741958B0E300FE2780 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 98CA51591958B0E300FE2780 /* Project object */;
@@ -89,30 +75,44 @@
 			remoteGlobalIDString = 98CA51601958B0E300FE2780;
 			remoteInfo = muquiz;
 		};
-		98F830A519A790DC00D8AB51 /* PBXContainerItemProxy */ = {
+		A8F6EF3A19AE76E3008625BB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 98F8309E19A790DB00D8AB51 /* GPUImage.xcodeproj */;
+			containerPortal = A8F6EF3519AE76E2008625BB /* CocoaLibSpotify iOS Library.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 50AF49DC1439CBFE00E4A5EF;
+			remoteInfo = CocoaLibSpotify;
+		};
+		A8F6EF3C19AE76E3008625BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A8F6EF3519AE76E2008625BB /* CocoaLibSpotify iOS Library.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 50D4F52B156BCDE800E237DD;
+			remoteInfo = CocoaLSTests;
+		};
+		A8F6EF4419AE76FA008625BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A8F6EF3E19AE76F9008625BB /* GPUImage.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = BCF1A33414DDB1EC00852800;
 			remoteInfo = GPUImage;
 		};
-		98F830A719A790DC00D8AB51 /* PBXContainerItemProxy */ = {
+		A8F6EF4619AE76FA008625BB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 98F8309E19A790DB00D8AB51 /* GPUImage.xcodeproj */;
+			containerPortal = A8F6EF3E19AE76F9008625BB /* GPUImage.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = BCE209E51943F20C002FEED8;
 			remoteInfo = GPUImageFramework;
 		};
-		98F830AB19A7911100D8AB51 /* PBXContainerItemProxy */ = {
+		A8F6EF4A19AE77B6008625BB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 98F8309E19A790DB00D8AB51 /* GPUImage.xcodeproj */;
+			containerPortal = A8F6EF3E19AE76F9008625BB /* GPUImage.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = BCE209E41943F20C002FEED8;
 			remoteInfo = GPUImageFramework;
 		};
-		98FBE53D19A1615C007B1D2E /* PBXContainerItemProxy */ = {
+		A8F6EF4C19AE77B6008625BB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 98830E7B19A119D5001768B8 /* CocoaLibSpotify iOS Library.xcodeproj */;
+			containerPortal = A8F6EF3519AE76E2008625BB /* CocoaLibSpotify iOS Library.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 50AF49DB1439CBFE00E4A5EF;
 			remoteInfo = CocoaLibSpotify;
@@ -128,7 +128,6 @@
 		982D467719A0D275003C9583 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		98612B4819995DF400865193 /* mainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
 		98612B4A199960FE00865193 /* backgroundVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = backgroundVideo.mp4; path = ../backgroundVideo.mp4; sourceTree = "<group>"; };
-		987140F61993D4B2009E14A3 /* bg_image_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg_image_1.jpg; path = ../../../../../../../../Documents/Development/MusiQuiz/muquiz/bg_image_1.jpg; sourceTree = BUILT_PRODUCTS_DIR; };
 		987725CA19A545FC0046D73F /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		987725CB19A545FC0046D73F /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		9881D4AC199EC10800F40D3D /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
@@ -138,7 +137,6 @@
 		98830D8C19A109BE001768B8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		98830D8E19A109CA001768B8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		98830D9019A109D4001768B8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		98830E7B19A119D5001768B8 /* CocoaLibSpotify iOS Library.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CocoaLibSpotify iOS Library.xcodeproj"; path = "../../../Downloads/cocoalibspotify-master/iOS Library/CocoaLibSpotify iOS Library.xcodeproj"; sourceTree = "<group>"; };
 		98830E8719A143D7001768B8 /* shuffle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shuffle.png; sourceTree = "<group>"; };
 		98A11E6B19A0E0AB00CD2426 /* UserCredentialsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCredentialsHelper.h; sourceTree = "<group>"; };
 		98A11E6C19A0E0AB00CD2426 /* UserCredentialsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCredentialsHelper.m; sourceTree = "<group>"; };
@@ -181,7 +179,6 @@
 		98F2616119AE715F0089235C /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
 		98F2616619AE72070089235C /* login2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login2.png; sourceTree = "<group>"; };
 		98F2616819AE75150089235C /* point.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = point.png; sourceTree = "<group>"; };
-		98F8309E19A790DB00D8AB51 /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = "../../../Downloads/GPUImage-master/framework/GPUImage.xcodeproj"; sourceTree = "<group>"; };
 		98F830AF19AA705A00D8AB51 /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white.png; sourceTree = "<group>"; };
 		98FBE53F19A16543007B1D2E /* InsetBlurModalSeque.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsetBlurModalSeque.swift; sourceTree = "<group>"; };
 		98FE04CA19AD2FBF006F7758 /* vinyl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vinyl.png; sourceTree = "<group>"; };
@@ -189,6 +186,9 @@
 		98FE04D119AD34F2006F7758 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
 		98FE04D219AD34F2006F7758 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 		98FE04D319AD34F2006F7758 /* pointer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pointer.png; sourceTree = "<group>"; };
+		A8F6EF3319AE76D7008625BB /* bg_image_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg_image_1.jpg; sourceTree = "<group>"; };
+		A8F6EF3519AE76E2008625BB /* CocoaLibSpotify iOS Library.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CocoaLibSpotify iOS Library.xcodeproj"; path = "frameworks/iOS Library/CocoaLibSpotify iOS Library.xcodeproj"; sourceTree = "<group>"; };
+		A8F6EF3E19AE76F9008625BB /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = frameworks/gpuimage/GPUImage.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,8 +196,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98F830AD19A7912400D8AB51 /* GPUImage.framework in Frameworks */,
-				98830E8619A11A19001768B8 /* libCocoaLibSpotify.a in Frameworks */,
+				A8F6EF4E19AE77C5008625BB /* GPUImage.framework in Frameworks */,
+				A8F6EF4F19AE77C5008625BB /* libCocoaLibSpotify.a in Frameworks */,
 				98830D9119A109D4001768B8 /* CoreGraphics.framework in Frameworks */,
 				98830D8F19A109CA001768B8 /* Foundation.framework in Frameworks */,
 				98830D8D19A109BE001768B8 /* UIKit.framework in Frameworks */,
@@ -245,18 +245,9 @@
 				9881D4AE199F495100F40D3D /* round_mask.png */,
 				98A2C4C8199AAEE000545A7E /* icon_256.png */,
 				98612B4A199960FE00865193 /* backgroundVideo.mp4 */,
-				987140F61993D4B2009E14A3 /* bg_image_1.jpg */,
+				A8F6EF3319AE76D7008625BB /* bg_image_1.jpg */,
 			);
 			name = assets;
-			sourceTree = "<group>";
-		};
-		98830E7C19A119D5001768B8 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				98830E8119A119D5001768B8 /* libCocoaLibSpotify.a */,
-				98830E8319A119D5001768B8 /* CocoaLSTests.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		98A11E6E19A0E0BE00CD2426 /* Spotify */ = {
@@ -318,8 +309,8 @@
 		98CA51581958B0E300FE2780 = {
 			isa = PBXGroup;
 			children = (
-				98F8309E19A790DB00D8AB51 /* GPUImage.xcodeproj */,
-				98830E7B19A119D5001768B8 /* CocoaLibSpotify iOS Library.xcodeproj */,
+				A8F6EF3E19AE76F9008625BB /* GPUImage.xcodeproj */,
+				A8F6EF3519AE76E2008625BB /* CocoaLibSpotify iOS Library.xcodeproj */,
 				98CA51631958B0E300FE2780 /* muquiz */,
 				98CA51761958B0E300FE2780 /* muquizTests */,
 				98CA51621958B0E300FE2780 /* Products */,
@@ -386,11 +377,20 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		98F8309F19A790DB00D8AB51 /* Products */ = {
+		A8F6EF3619AE76E2008625BB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				98F830A619A790DC00D8AB51 /* libGPUImage.a */,
-				98F830A819A790DC00D8AB51 /* GPUImage.framework */,
+				A8F6EF3B19AE76E3008625BB /* libCocoaLibSpotify.a */,
+				A8F6EF3D19AE76E3008625BB /* CocoaLSTests.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A8F6EF3F19AE76F9008625BB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A8F6EF4519AE76FA008625BB /* libGPUImage.a */,
+				A8F6EF4719AE76FA008625BB /* GPUImage.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -409,8 +409,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				98F830AC19A7911100D8AB51 /* PBXTargetDependency */,
-				98FBE53E19A1615C007B1D2E /* PBXTargetDependency */,
+				A8F6EF4B19AE77B6008625BB /* PBXTargetDependency */,
+				A8F6EF4D19AE77B6008625BB /* PBXTargetDependency */,
 			);
 			name = muquiz;
 			productName = muquiz;
@@ -467,12 +467,12 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 98830E7C19A119D5001768B8 /* Products */;
-					ProjectRef = 98830E7B19A119D5001768B8 /* CocoaLibSpotify iOS Library.xcodeproj */;
+					ProductGroup = A8F6EF3619AE76E2008625BB /* Products */;
+					ProjectRef = A8F6EF3519AE76E2008625BB /* CocoaLibSpotify iOS Library.xcodeproj */;
 				},
 				{
-					ProductGroup = 98F8309F19A790DB00D8AB51 /* Products */;
-					ProjectRef = 98F8309E19A790DB00D8AB51 /* GPUImage.xcodeproj */;
+					ProductGroup = A8F6EF3F19AE76F9008625BB /* Products */;
+					ProjectRef = A8F6EF3E19AE76F9008625BB /* GPUImage.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -484,32 +484,32 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		98830E8119A119D5001768B8 /* libCocoaLibSpotify.a */ = {
+		A8F6EF3B19AE76E3008625BB /* libCocoaLibSpotify.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libCocoaLibSpotify.a;
-			remoteRef = 98830E8019A119D5001768B8 /* PBXContainerItemProxy */;
+			remoteRef = A8F6EF3A19AE76E3008625BB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		98830E8319A119D5001768B8 /* CocoaLSTests.app */ = {
+		A8F6EF3D19AE76E3008625BB /* CocoaLSTests.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = CocoaLSTests.app;
-			remoteRef = 98830E8219A119D5001768B8 /* PBXContainerItemProxy */;
+			remoteRef = A8F6EF3C19AE76E3008625BB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		98F830A619A790DC00D8AB51 /* libGPUImage.a */ = {
+		A8F6EF4519AE76FA008625BB /* libGPUImage.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libGPUImage.a;
-			remoteRef = 98F830A519A790DC00D8AB51 /* PBXContainerItemProxy */;
+			remoteRef = A8F6EF4419AE76FA008625BB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		98F830A819A790DC00D8AB51 /* GPUImage.framework */ = {
+		A8F6EF4719AE76FA008625BB /* GPUImage.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = GPUImage.framework;
-			remoteRef = 98F830A719A790DC00D8AB51 /* PBXContainerItemProxy */;
+			remoteRef = A8F6EF4619AE76FA008625BB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -539,7 +539,6 @@
 				98FE04CB19AD2FBF006F7758 /* vinyl.png in Resources */,
 				98BA5A5B19ABB8E80003DF08 /* Lato-BoldItalic.ttf in Resources */,
 				98BA5A5919ABB8E80003DF08 /* Lato-BlackItalic.ttf in Resources */,
-				987140F71993D4B2009E14A3 /* bg_image_1.jpg in Resources */,
 				98CA516C1958B0E300FE2780 /* Main.storyboard in Resources */,
 				98F2616219AE715F0089235C /* login.png in Resources */,
 				98830E8819A143D7001768B8 /* shuffle.png in Resources */,
@@ -548,6 +547,7 @@
 				98F830B019AA705A00D8AB51 /* white.png in Resources */,
 				98BA5A6419ABB8E80003DF08 /* Lato-MediumItalic.ttf in Resources */,
 				98FE04D419AD34F2006F7758 /* stop.png in Resources */,
+				A8F6EF3419AE76D7008625BB /* bg_image_1.jpg in Resources */,
 				98BA5A1819ABADAD0003DF08 /* disco.png in Resources */,
 				98BA5A6819ABB8E80003DF08 /* Lato-Thin.ttf in Resources */,
 				98CA516E1958B0E300FE2780 /* Images.xcassets in Resources */,
@@ -600,15 +600,15 @@
 			target = 98CA51601958B0E300FE2780 /* muquiz */;
 			targetProxy = 98CA51741958B0E300FE2780 /* PBXContainerItemProxy */;
 		};
-		98F830AC19A7911100D8AB51 /* PBXTargetDependency */ = {
+		A8F6EF4B19AE77B6008625BB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = GPUImageFramework;
-			targetProxy = 98F830AB19A7911100D8AB51 /* PBXContainerItemProxy */;
+			targetProxy = A8F6EF4A19AE77B6008625BB /* PBXContainerItemProxy */;
 		};
-		98FBE53E19A1615C007B1D2E /* PBXTargetDependency */ = {
+		A8F6EF4D19AE77B6008625BB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CocoaLibSpotify;
-			targetProxy = 98FBE53D19A1615C007B1D2E /* PBXContainerItemProxy */;
+			targetProxy = A8F6EF4C19AE77B6008625BB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

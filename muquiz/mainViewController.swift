@@ -202,8 +202,7 @@ class mainViewController: UIViewController {
         self.customView.alpha = 0.8
         self.customView.backgroundColor = UIColor.clearColor()
     }
-    
-    @IBAction func didPushPlayButton(sender : AnyObject) {
+        @IBAction func didPushPlayButton(sender : AnyObject) {
 
         self.shuffleImageView.layer.opacity = 1.0
         let opacityAnimation = CABasicAnimation(keyPath: "opacity")
@@ -382,7 +381,7 @@ class mainViewController: UIViewController {
         self.startAnimationForSong()
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewWillDisappear(animated: Bool) {
         self.removeObserver(self, forKeyPath: "spotifyController.search.tracks")
         self.removeObserver(self, forKeyPath: "spotifyController.search.playlists")
         self.removeObserver(self, forKeyPath: "spotifyController.loggedInUser")
@@ -394,6 +393,21 @@ class mainViewController: UIViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
+    override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
+        if(identifier == "logoutsegue")
+        {
+
+        }
+        return true;
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        if(segue.identifier == "logoutsegue")
+        {
+            let loginVC : LoginViewController = segue.destinationViewController as LoginViewController
+            loginVC.spotifyController = self.spotifyController
+        }
+    }
     @IBAction func logOut(sender : AnyObject) {
 
         self.spotifyController.logOut()

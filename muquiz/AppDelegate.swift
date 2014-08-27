@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var mask: CALayer?
     var imageView: UIImageView?
     var masterViewController: UINavigationController!
-    var spotifyController : SpotifyController = SpotifyController()
+    var spotifyController : SpotifyController! = SpotifyController()
     var succesfulLogin : Bool = false
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {

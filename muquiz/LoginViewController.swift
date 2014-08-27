@@ -21,14 +21,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var usernameHintLabel : UILabel!
     @IBOutlet var passwordHintLabel : UILabel!
     @IBOutlet var backgroundImageView : UIImageView!
-    
-    var spotifyController : SpotifyController = SpotifyController()
+
+    var spotifyController : SpotifyController!
     var successfullLogin : Bool = false
     var keypath : String = ""
     
     override func viewWillAppear(animated: Bool) {
         self.addObserver(self, forKeyPath: "spotifyController.loggedInUser", options: .New, context: nil)
     }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,10 +108,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func observeValueForKeyPath(keyPath: String!, ofObject object: AnyObject!, change: [NSObject : AnyObject]!, context: UnsafeMutablePointer<()>) {
         
         if keyPath == "spotifyController.loggedInUser" {
-            self.keypath = "spotifyController.loggedInUser"
-            self.usernameTextField.text = self.spotifyController.loggedInUser
-            self.successfullLogin = true
-            self.shouldPerformSegueWithIdentifier("push", sender: self)
+            if(self.spotifyController.loggedInUser != nil)
+            {
+                self.keypath = "spotifyController.loggedInUser"
+                self.usernameTextField.text = self.spotifyController.loggedInUser
+                self.successfullLogin = true
+                self.shouldPerformSegueWithIdentifier("push", sender: self)
+            }
+            
 
         }
     }
@@ -155,12 +160,5 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func setSpotifyController()->SpotifyController
-    {
-        if(spotifyController == nil)
-        {
-            spotifyController = SpotifyController();
-        }
-        return spotifyController;
-    }
+    
 }
