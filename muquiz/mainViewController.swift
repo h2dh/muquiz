@@ -113,23 +113,27 @@ class mainViewController: UIViewController {
     
     //Stop song
     func leftSwipe(sender: UISwipeGestureRecognizer!){
-        self.shuffleImageView.layer.opacity = 1.0
-        let opacityAnimation = CABasicAnimation(keyPath: "opacity")
-        opacityAnimation.fromValue = NSNumber.numberWithFloat(1.0)
-        opacityAnimation.toValue = NSNumber.numberWithFloat(0.0)
-        opacityAnimation.duration = 0.3
-        
-        self.shuffleImageView.layer.addAnimation(opacityAnimation, forKey: "opacity")
-        self.shuffleImageView.layer.opacity = 0.0
-        
-        self.pickRandomSong();
-        //self.genrePick(self.currentGenre)
+        if !self.spotifyController.isPlayingSong() {
+            self.shuffleImageView.layer.opacity = 1.0
+            let opacityAnimation = CABasicAnimation(keyPath: "opacity")
+            opacityAnimation.fromValue = NSNumber.numberWithFloat(1.0)
+            opacityAnimation.toValue = NSNumber.numberWithFloat(0.0)
+            opacityAnimation.duration = 0.3
+            
+            self.shuffleImageView.layer.addAnimation(opacityAnimation, forKey: "opacity")
+            self.shuffleImageView.layer.opacity = 0.0
+            
+            self.pickRandomSong();
+            //self.genrePick(self.currentGenre)
+        }
     }
     
     //Start new song
     func rightSwipe(sender: UISwipeGestureRecognizer!) {
         
-        self.forceEndSong()
+        if self.spotifyController.isPlayingSong(){
+            self.forceEndSong()
+        }
     }
     
     override func viewDidLoad() {
@@ -493,9 +497,32 @@ class mainViewController: UIViewController {
  
     }
     
+    func drawText(text : NSString, image:UIImage, point:CGPoint) -> (UIImage) {
+        UIGraphicsBeginImageContext(image.size)
+        image.drawInRect(CGRectMake(0,0,image.size.width,image.size.height))
+        
+        let rect:CGRect = CGRectMake(point.x, point.y, image.size.width, image.size.height)
+        
+        UIColor.whiteColor().set()
+        
+        let font : UIFont = UIFont.systemFontOfSize(12)
+        
+        let att : NSDictionary = [NSFontAttributeName: self]
+        
+        text.drawInRect(rect, withAttributes: att)
+        
+        
+        let newImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage;
+        
+    }
+    
     func songEndedPlaying(notification: NSNotification){
         self.playButton.enabled = true
         self.doneButton.enabled = false
+        
+        self.drawText(self.titleLabel.text, image: self.background.image, point: self.background.center)
         
         self.logoImageView.layer.opacity = 0.0;
         let fadeOutAnimation = CABasicAnimation(keyPath: "opacity")
