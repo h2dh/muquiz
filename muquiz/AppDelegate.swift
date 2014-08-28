@@ -87,9 +87,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return spotifyController;
     }
-    
-    
-
-
 }
 

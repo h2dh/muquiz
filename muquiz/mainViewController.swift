@@ -39,6 +39,7 @@ class mainViewController: UIViewController {
     @IBOutlet weak var blurryImageView: UIImageView!
     var currentTrack:SPTrack = SPTrack()
     
+    @IBOutlet weak var pickUpImage: UIImageView!
     var isObservingAlbum : Bool = false
     @IBOutlet weak var logoImageView: UIImageView!
     
@@ -69,17 +70,20 @@ class mainViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+
+        var blur:UIBlurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        var effectView:UIVisualEffectView = UIVisualEffectView (effect: blur)
+        effectView.frame = self.background.bounds
+        self.background.addSubview(effectView)
         
-        // Then apply the animation.
-       
         var animation : CABasicAnimation = CABasicAnimation(keyPath: "opacity")
         animation.duration = 2.0
         animation.fromValue = 0.0
         animation.toValue = 1.0
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        
         //self.songImageView.layer.addAnimation(animation, forKey: "opacity")
         
+        self.stopImageVIew.layer.opacity = 0.0
         self.songImageView.layer.opacity = 1.0
         self.shuffleImageView.layer.opacity = 1.0
         shuffleImageView.layer.shadowColor = UIColor.blackColor().CGColor;
@@ -87,22 +91,70 @@ class mainViewController: UIViewController {
         shuffleImageView.layer.shadowOpacity = 1.0;
         shuffleImageView.layer.shadowRadius = 1.0;
         shuffleImageView.clipsToBounds = false;
-    
+        
+        
         self.songImageView.layer.transform = CATransform3DMakeScale(0.0, 0.0, 0.0)
         self.shuffleImageView.layer.transform = CATransform3DMakeScale(0.0, 0.0, 0.0)
         self.vinylImage.layer.transform = CATransform3DMakeScale(0.0, 0.0, 0.0)
+        self.logoImageView.layer.transform = CATransform3DMakeScale(0.0, 0.0, 0.0)
+        self.pickUpImage.layer.transform = CATransform3DMakeScale(0.0, 0.0, 0.0)
         
-        UIView.animateWithDuration(1.0, delay: 0.3, usingSpringWithDamping: 0.4, initialSpringVelocity: 1.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: ({
+        
+        UIView.animateWithDuration(1.0, delay: 0.2, usingSpringWithDamping: 0.4, initialSpringVelocity: 1.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: ({
             self.songImageView.layer.transform = CATransform3DMakeScale(1.0, 1.0, 1.0)
-            self.shuffleImageView.layer.transform = CATransform3DMakeScale(0.7, 0.7, 0.7)
+            self.shuffleImageView.layer.transform = CATransform3DMakeScale(1.0, 1.0, 1.0)
             self.vinylImage.layer.transform = CATransform3DMakeScale(1.0, 1.0, 1.0)
+            self.logoImageView.layer.transform = CATransform3DMakeScale(1.0, 1.0, 1.0)
+            self.pickUpImage.layer.transform = CATransform3DMakeScale(1.0, 1.0, 1.0)
         }), completion: nil)
+
+        
+    }
+    
+    //Stop song
+    func leftSwipe(sender: UISwipeGestureRecognizer!){
+        self.shuffleImageView.layer.opacity = 1.0
+        let opacityAnimation = CABasicAnimation(keyPath: "opacity")
+        opacityAnimation.fromValue = NSNumber.numberWithFloat(1.0)
+        opacityAnimation.toValue = NSNumber.numberWithFloat(0.0)
+        opacityAnimation.duration = 0.3
+        
+        self.shuffleImageView.layer.addAnimation(opacityAnimation, forKey: "opacity")
+        self.shuffleImageView.layer.opacity = 0.0
+        
+        self.pickRandomSong();
+        //self.genrePick(self.currentGenre)
+    }
+    
+    //Start new song
+    func rightSwipe(sender: UISwipeGestureRecognizer!) {
+        
+        self.forceEndSong()
     }
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
+        let rightSwipeSelector : Selector = "rightSwipe:"
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: rightSwipeSelector)
+        rightSwipe.direction = UISwipeGestureRecognizerDirection.Right
+        
+        self.vinylImage.addGestureRecognizer(rightSwipe)
+        
+        let leftSwipeSelector : Selector = "leftSwipe:"
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: leftSwipeSelector)
+        leftSwipe.direction = UISwipeGestureRecognizerDirection.Left
+        
+        self.vinylImage.addGestureRecognizer(leftSwipe)
+        
+        /*
+        self.pickUpImage.layer.transform = CATransform3DMakeRotation(5.14, 0.0, 0.0, 1.0)
+       
+        UIView.animateWithDuration(1.0, delay: 1.3, usingSpringWithDamping: 0.2, initialSpringVelocity: 10.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: ({
+            self.pickUpImage.layer.transform = CATransform3DMakeRotation(0.0, 0.0, 0.0, 0.0)
+        }), completion: nil)
+        */
         self.vinylImage.layer.shadowColor = UIColor.blackColor().CGColor
         vinylImage.layer.shadowColor = UIColor.blackColor().CGColor;
         vinylImage.layer.shadowOffset = CGSizeMake(0, 1);
@@ -123,8 +175,9 @@ class mainViewController: UIViewController {
         effectView.frame = self.background.bounds
         self.background.addSubview(effectView)
         
-        var filter : GPUImagePixellateFilter = GPUImagePixellateFilter()
-        self.songImageView.image = filter.imageByFilteringImage(self.songImageView.image)
+        //var filter : GPUImagePixellateFilter = GPUImagePixellateFilter()
+        //var filter : GPUImageBoxBlurFilter = GPUImageBoxBlurFilter()
+        //self.songImageView.image = filter.imageByFilteringImage(self.songImageView.image)
         
         self.regionTopList = SPToplist(forLocale: SPSession.sharedSession().locale, inSession: SPSession.sharedSession())
         self.userTopList = SPToplist(forCurrentUserInSession: SPSession.sharedSession())
@@ -284,17 +337,40 @@ class mainViewController: UIViewController {
         
         self.circleFill.addAnimation(animation, forKey: "strokeEnd")
         */
-        self.songImageViewCopy.layer.opacity = 1.0
+        
+        var filter : GPUImagePixellateFilter = GPUImagePixellateFilter()
+        self.songImageViewCopy.image = filter.imageByFilteringImage(self.songImageViewCopy.image)
         
         let transitionFadeOut = CABasicAnimation(keyPath: "opacity")
         
-        transitionFadeOut.duration = 30
+        transitionFadeOut.duration = 0.3
         transitionFadeOut.fromValue = 1.0
         transitionFadeOut.toValue = 0.0
         transitionFadeOut.delegate = self
         transitionFadeOut.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        self.shuffleImageView.layer.addAnimation(transitionFadeOut, forKey: "opacity")
+        self.shuffleImageView.layer.opacity = 0.0
         
-        self.songImageViewCopy.layer.addAnimation(transitionFadeOut, forKey: "opacity")
+        let transitionFadeIn = CABasicAnimation(keyPath: "opacity")
+        transitionFadeIn.duration = 0.3
+        transitionFadeIn.fromValue = 0.0
+        transitionFadeIn.toValue = 1.0
+        transitionFadeIn.delegate = self
+        transitionFadeIn.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        self.stopImageVIew.layer.addAnimation(transitionFadeIn, forKey: "opacity")
+        self.stopImageVIew.layer.opacity = 1.0
+
+        self.songImageViewCopy.layer.opacity = 1.0
+        
+        let transitionFadeOutImage = CABasicAnimation(keyPath: "opacity")
+        
+        transitionFadeOutImage.duration = 30
+        transitionFadeOutImage.fromValue = 1.0
+        transitionFadeOutImage.toValue = 0.0
+        transitionFadeOutImage.delegate = self
+        transitionFadeOutImage.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        
+        self.songImageViewCopy.layer.addAnimation(transitionFadeOutImage, forKey: "opacity")
         
         self.songImageViewCopy.layer.opacity = 0.0
 
@@ -369,11 +445,11 @@ class mainViewController: UIViewController {
         
         self.doneButton.hidden = false
         var filter : GPUImagePixellateFilter = GPUImagePixellateFilter()
+        //var filter : GPUImageBoxBlurFilter = GPUImageBoxBlurFilter()
         self.currentTrackImage = song.album.cover.image
         self.songImageViewCopy.image = filter.imageByFilteringImage(song.album.cover.image)
         self.songImageViewCopy.layer.opacity = 1.0
         self.songImageViewCopy.hidden = false
-        
         self.songImageView.image = song.album.cover.image
         
         stopWatch.start()
@@ -382,7 +458,7 @@ class mainViewController: UIViewController {
         self.startAnimationForSong()
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewWillDisappear(animated: Bool) {
         self.removeObserver(self, forKeyPath: "spotifyController.search.tracks")
         self.removeObserver(self, forKeyPath: "spotifyController.search.playlists")
         self.removeObserver(self, forKeyPath: "spotifyController.loggedInUser")
@@ -428,6 +504,9 @@ class mainViewController: UIViewController {
         fadeOutAnimation.duration = 0.3
         
         self.logoImageView.layer.addAnimation(fadeOutAnimation, forKey: "opacity")
+        self.stopImageVIew.layer.addAnimation(fadeOutAnimation, forKey: "opacity")
+        
+        self.stopImageVIew.layer.opacity = 0.0
         self.logoImageView.layer.opacity = 0.0
         
         self.shuffleImageView.layer.opacity = 0.0
@@ -463,4 +542,13 @@ class mainViewController: UIViewController {
         self.doneButton.hidden = true
         self.stopWatch.reset()
     }
+    
+  override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        if(segue.identifier == "logoutsegue")
+        {
+            let loginVC : LoginViewController = segue.destinationViewController as LoginViewController
+            loginVC.spotifyController = self.spotifyController
+       }
+   }
+    
 }

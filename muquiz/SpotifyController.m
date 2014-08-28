@@ -91,7 +91,7 @@
     [self.spotifySession logout:^{
         [self.userDefaultsHelper removeSavedLoginCredentials];
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.loggedInUser = @"";
+            self.loggedInUser = nil;
 
         });
     }];
