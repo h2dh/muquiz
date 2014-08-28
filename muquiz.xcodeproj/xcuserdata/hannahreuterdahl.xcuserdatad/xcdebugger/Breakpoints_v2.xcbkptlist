@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "muquiz/mainViewController.swift"
-            timestampString = "430934274.941492"
+            timestampString = "430938790.317182"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "387"
-            endingLineNumber = "387"
+            startingLineNumber = "404"
+            endingLineNumber = "404"
             landmarkName = "genrePick(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "muquiz/mainViewController.swift"
-            timestampString = "430934274.941492"
+            timestampString = "430938790.317182"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "429"
-            endingLineNumber = "429"
+            startingLineNumber = "446"
+            endingLineNumber = "446"
             landmarkName = "chooseRandomSongForGenre(_:)"
             landmarkType = "5">
             <Locations>
@@ -168,11 +168,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "muquiz/mainViewController.swift"
-            timestampString = "430934274.941492"
+            timestampString = "430938790.317182"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "417"
-            endingLineNumber = "417"
+            startingLineNumber = "434"
+            endingLineNumber = "434"
             landmarkName = "chooseRandomSongForGenre(_:)"
             landmarkType = "5">
             <Locations>
@@ -334,11 +334,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "muquiz/mainViewController.swift"
-            timestampString = "430934274.941492"
+            timestampString = "430938790.317182"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "430"
-            endingLineNumber = "430"
+            startingLineNumber = "447"
+            endingLineNumber = "447"
             landmarkName = "chooseRandomSongForGenre(_:)"
             landmarkType = "5">
             <Locations>
@@ -422,11 +422,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "muquiz/mainViewController.swift"
-            timestampString = "430934274.941492"
+            timestampString = "430938790.317182"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "433"
-            endingLineNumber = "433"
+            startingLineNumber = "450"
+            endingLineNumber = "450"
             landmarkName = "chooseRandomSongForGenre(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -484,11 +484,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "muquiz/mainViewController.swift"
-            timestampString = "430934274.941492"
+            timestampString = "430938790.317182"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "400"
-            endingLineNumber = "400"
+            startingLineNumber = "417"
+            endingLineNumber = "417"
             landmarkName = "observeValueForKeyPath(_:ofObject:change:context:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -515,11 +515,11 @@
                   symbolName = "muquiz.mainViewController.startAnimationForSong (muquiz.mainViewController)() -&gt; ()"
                   moduleName = "muquiz"
                   urlString = "file:///Users/hannahreuterdahl/Documents/Development/muquiz/muquiz/mainViewController.swift"
-                  timestampString = "430871360.875375"
+                  timestampString = "430939278.610658"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "320"
-                  endingLineNumber = "320"
+                  startingLineNumber = "325"
+                  endingLineNumber = "325"
                   offsetFromSymbolStart = "2412">
                </Location>
                <Location
@@ -529,11 +529,11 @@
                   symbolName = "muquiz.mainViewController.startAnimationForSong (muquiz.mainViewController)() -&gt; ()"
                   moduleName = "muquiz"
                   urlString = "file:///Users/hannahreuterdahl/Documents/Development/muquiz/muquiz/mainViewController.swift"
-                  timestampString = "430871360.875498"
+                  timestampString = "430939278.610841"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "320"
-                  endingLineNumber = "320"
+                  startingLineNumber = "325"
+                  endingLineNumber = "325"
                   offsetFromSymbolStart = "2478">
                </Location>
             </Locations>
@@ -561,11 +561,11 @@
                   symbolName = "muquiz.mainViewController.startAnimationForSong (muquiz.mainViewController)() -&gt; ()"
                   moduleName = "muquiz"
                   urlString = "file:///Users/hannahreuterdahl/Documents/Development/muquiz/muquiz/mainViewController.swift"
-                  timestampString = "430871360.876065"
+                  timestampString = "430939278.611496"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "310"
-                  endingLineNumber = "310"
+                  startingLineNumber = "315"
+                  endingLineNumber = "315"
                   offsetFromSymbolStart = "24">
                </Location>
                <Location
@@ -575,11 +575,11 @@
                   symbolName = "muquiz.mainViewController.startAnimationForSong (muquiz.mainViewController)() -&gt; ()"
                   moduleName = "muquiz"
                   urlString = "file:///Users/hannahreuterdahl/Documents/Development/muquiz/muquiz/mainViewController.swift"
-                  timestampString = "430871360.876191"
+                  timestampString = "430939278.611612"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "310"
-                  endingLineNumber = "310"
+                  startingLineNumber = "315"
+                  endingLineNumber = "315"
                   offsetFromSymbolStart = "82">
                </Location>
             </Locations>
@@ -607,7 +607,7 @@
                   symbolName = "muquiz.LoginViewController.startBackgroundVideo (muquiz.LoginViewController)() -&gt; ()"
                   moduleName = "muquiz"
                   urlString = "file:///Users/hannahreuterdahl/Documents/Development/muquiz/muquiz/LoginViewController.swift"
-                  timestampString = "430871360.876768"
+                  timestampString = "430939278.612224"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "146"
@@ -621,7 +621,7 @@
                   symbolName = "muquiz.LoginViewController.startBackgroundVideo (muquiz.LoginViewController)() -&gt; ()"
                   moduleName = "muquiz"
                   urlString = "file:///Users/hannahreuterdahl/Documents/Development/muquiz/muquiz/LoginViewController.swift"
-                  timestampString = "430871360.876939"
+                  timestampString = "430939278.612323"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "146"
@@ -731,11 +731,11 @@
                   symbolName = "muquiz.mainViewController.didPushPlayButton (muquiz.mainViewController)(Swift.AnyObject) -&gt; ()"
                   moduleName = "muquiz"
                   urlString = "file:///Users/hannahreuterdahl/Documents/Development/muquiz/muquiz/mainViewController.swift"
-                  timestampString = "430871360.878111"
+                  timestampString = "430939278.613398"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "261"
-                  endingLineNumber = "261"
+                  startingLineNumber = "266"
+                  endingLineNumber = "266"
                   offsetFromSymbolStart = "489">
                </Location>
                <Location
@@ -745,11 +745,11 @@
                   symbolName = "muquiz.mainViewController.didPushPlayButton (muquiz.mainViewController)(Swift.AnyObject) -&gt; ()"
                   moduleName = "muquiz"
                   urlString = "file:///Users/hannahreuterdahl/Documents/Development/muquiz/muquiz/mainViewController.swift"
-                  timestampString = "430871360.878224"
+                  timestampString = "430939278.613514"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "261"
-                  endingLineNumber = "261"
+                  startingLineNumber = "266"
+                  endingLineNumber = "266"
                   offsetFromSymbolStart = "555">
                </Location>
             </Locations>
@@ -808,11 +808,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "muquiz/mainViewController.swift"
-            timestampString = "430936825.240269"
+            timestampString = "430938790.317182"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "526"
-            endingLineNumber = "526"
+            startingLineNumber = "543"
+            endingLineNumber = "543"
             landmarkName = "songEndedPlaying(_:)"
             landmarkType = "5">
             <Locations>
@@ -823,11 +823,11 @@
                   symbolName = "muquiz.mainViewController.songEndedPlaying (muquiz.mainViewController)(ObjectiveC.NSNotification) -&gt; ()"
                   moduleName = "muquiz"
                   urlString = "file:///Users/hannahreuterdahl/Documents/Development/muquiz/muquiz/mainViewController.swift"
-                  timestampString = "430871360.878808"
+                  timestampString = "430939278.614075"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "499"
-                  endingLineNumber = "499"
+                  startingLineNumber = "544"
+                  endingLineNumber = "544"
                   offsetFromSymbolStart = "898">
                </Location>
                <Location
@@ -837,11 +837,11 @@
                   symbolName = "muquiz.mainViewController.songEndedPlaying (muquiz.mainViewController)(ObjectiveC.NSNotification) -&gt; ()"
                   moduleName = "muquiz"
                   urlString = "file:///Users/hannahreuterdahl/Documents/Development/muquiz/muquiz/mainViewController.swift"
-                  timestampString = "430871360.878974"
+                  timestampString = "430939278.614256"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "499"
-                  endingLineNumber = "499"
+                  startingLineNumber = "544"
+                  endingLineNumber = "544"
                   offsetFromSymbolStart = "950">
                </Location>
             </Locations>
@@ -854,11 +854,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "muquiz/mainViewController.swift"
-            timestampString = "430934274.941492"
+            timestampString = "430938790.317182"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "493"
-            endingLineNumber = "493"
+            startingLineNumber = "510"
+            endingLineNumber = "510"
             landmarkName = "forceEndSong()"
             landmarkType = "5">
          </BreakpointContent>
@@ -870,11 +870,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "muquiz/mainViewController.swift"
-            timestampString = "430934274.941492"
+            timestampString = "430938790.317182"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "450"
-            endingLineNumber = "450"
+            startingLineNumber = "467"
+            endingLineNumber = "467"
             landmarkName = "setCoverImageAndPlaySong(_:song:)"
             landmarkType = "5">
             <Locations>
@@ -885,11 +885,11 @@
                   symbolName = "muquiz.mainViewController.setCoverImageAndPlaySong (muquiz.mainViewController)(ObjectiveC.UIImage, song : ObjectiveC.SPTrack) -&gt; ()"
                   moduleName = "muquiz"
                   urlString = "file:///Users/hannahreuterdahl/Documents/Development/muquiz/muquiz/mainViewController.swift"
-                  timestampString = "430871360.88004"
+                  timestampString = "430939278.615473"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "445"
-                  endingLineNumber = "445"
+                  startingLineNumber = "467"
+                  endingLineNumber = "467"
                   offsetFromSymbolStart = "36">
                </Location>
                <Location
@@ -899,11 +899,11 @@
                   symbolName = "muquiz.mainViewController.setCoverImageAndPlaySong (muquiz.mainViewController)(ObjectiveC.UIImage, song : ObjectiveC.SPTrack) -&gt; ()"
                   moduleName = "muquiz"
                   urlString = "file:///Users/hannahreuterdahl/Documents/Development/muquiz/muquiz/mainViewController.swift"
-                  timestampString = "430871360.880213"
+                  timestampString = "430939278.615577"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "445"
-                  endingLineNumber = "445"
+                  startingLineNumber = "467"
+                  endingLineNumber = "467"
                   offsetFromSymbolStart = "106">
                </Location>
             </Locations>

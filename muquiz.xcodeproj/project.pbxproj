@@ -30,6 +30,7 @@
 		9834EA7119AF9489005D22A4 /* vinyl-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 9834EA6219AF9489005D22A4 /* vinyl-small.png */; };
 		9834EA7219AF9489005D22A4 /* vinyl.png in Resources */ = {isa = PBXBuildFile; fileRef = 9834EA6319AF9489005D22A4 /* vinyl.png */; };
 		9834EA7319AF9489005D22A4 /* default-568h.png in Resources */ = {isa = PBXBuildFile; fileRef = 9834EA6419AF9489005D22A4 /* default-568h.png */; };
+		9834EA7919AFA2AB005D22A4 /* icon-logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 9834EA7819AFA2AB005D22A4 /* icon-logout.png */; };
 		98612B4919995DF400865193 /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98612B4819995DF400865193 /* mainViewController.swift */; };
 		987140F71993D4B2009E14A3 /* bg_image_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 987140F61993D4B2009E14A3 /* bg_image_1.jpg */; };
 		987725CC19A545FC0046D73F /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 987725CB19A545FC0046D73F /* UIImage+ImageEffects.m */; };
@@ -149,6 +150,7 @@
 		9834EA6219AF9489005D22A4 /* vinyl-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vinyl-small.png"; sourceTree = "<group>"; };
 		9834EA6319AF9489005D22A4 /* vinyl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vinyl.png; sourceTree = "<group>"; };
 		9834EA6419AF9489005D22A4 /* default-568h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default-568h.png"; sourceTree = "<group>"; };
+		9834EA7819AFA2AB005D22A4 /* icon-logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-logout.png"; sourceTree = "<group>"; };
 		98612B4819995DF400865193 /* mainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
 		98612B4A199960FE00865193 /* backgroundVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = backgroundVideo.mp4; path = ../backgroundVideo.mp4; sourceTree = "<group>"; };
 		987140F61993D4B2009E14A3 /* bg_image_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg_image_1.jpg; path = ../../../../../../../../Documents/Development/MusiQuiz/muquiz/bg_image_1.jpg; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -245,6 +247,7 @@
 			children = (
 				9834EA5619AF9489005D22A4 /* app-border.png */,
 				9834EA5719AF9489005D22A4 /* background.png */,
+				9834EA7819AFA2AB005D22A4 /* icon-logout.png */,
 				9834EA5819AF9489005D22A4 /* button-pressed.png */,
 				9834EA5919AF9489005D22A4 /* button.png */,
 				9834EA5A19AF9489005D22A4 /* icon-play.png */,
@@ -573,6 +576,7 @@
 				98BA5A6419ABB8E80003DF08 /* Lato-MediumItalic.ttf in Resources */,
 				9834EA6C19AF9489005D22A4 /* login-pressed.png in Resources */,
 				9834EA7019AF9489005D22A4 /* vinyl-arm.png in Resources */,
+				9834EA7919AFA2AB005D22A4 /* icon-logout.png in Resources */,
 				98BA5A6819ABB8E80003DF08 /* Lato-Thin.ttf in Resources */,
 				98CA516E1958B0E300FE2780 /* Images.xcassets in Resources */,
 				9834EA6619AF9489005D22A4 /* background.png in Resources */,

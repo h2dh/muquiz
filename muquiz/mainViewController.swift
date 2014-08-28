@@ -345,8 +345,12 @@ class mainViewController: UIViewController {
         var filter : GPUImagePixellateFilter = GPUImagePixellateFilter()
         self.songImageViewCopy.image = filter.imageByFilteringImage(self.songImageViewCopy.image)
         
-        let transitionFadeOut = CABasicAnimation(keyPath: "opacity")
+        UIView.animateWithDuration(0.5, delay: 0.1, usingSpringWithDamping: 0.4, initialSpringVelocity: 10.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: ({
+            self.shuffleImageView.layer.transform = CATransform3DMakeScale(0.0, 0.0, 0.0)
+        }), completion: nil)
         
+        
+        let transitionFadeOut = CABasicAnimation(keyPath: "opacity")
         transitionFadeOut.duration = 0.3
         transitionFadeOut.fromValue = 1.0
         transitionFadeOut.toValue = 0.0
@@ -354,6 +358,15 @@ class mainViewController: UIViewController {
         transitionFadeOut.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         self.shuffleImageView.layer.addAnimation(transitionFadeOut, forKey: "opacity")
         self.shuffleImageView.layer.opacity = 0.0
+        self.shuffleImageView.layer.transform = CATransform3DMakeScale(1.0, 1.0, 1.0)
+        
+
+        self.stopImageVIew.layer.transform = CATransform3DMakeScale(0.0, 0.0, 0.0)
+        UIView.animateWithDuration(0.5, delay: 0.2, usingSpringWithDamping: 0.4, initialSpringVelocity: 10.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: ({
+            self.stopImageVIew.layer.transform = CATransform3DMakeScale(1.0, 1.0, 1.0)
+        }), completion: nil)
+        self.stopImageVIew.layer.opacity = 1.0
+    
         
         let transitionFadeIn = CABasicAnimation(keyPath: "opacity")
         transitionFadeIn.duration = 0.3
@@ -365,6 +378,10 @@ class mainViewController: UIViewController {
         self.stopImageVIew.layer.opacity = 1.0
 
         self.songImageViewCopy.layer.opacity = 1.0
+        
+        //self.songImageViewCopy.layer.transform = CATransform3DMakeScale(0.0, 0.0, 0.0)
+        
+
         
         let transitionFadeOutImage = CABasicAnimation(keyPath: "opacity")
         
@@ -518,11 +535,26 @@ class mainViewController: UIViewController {
         
     }
     
+//     @IBAction func logOut(recognizer : UIPanGestureRecognizer) {
+//    
+//        let translation : CGPoint = recognizer.translationInView(recognizer.view)
+//        let updatedTranslation : CGPoint =
+//    }
+//    - (IBAction)handlePan:(UIPanGestureRecognizer *)recognizer {
+//    CGPoint translation = [recognizer translationInView:recognizer.view];
+//    CGPoint updatedTranslation = CGPointMake(translation.x+self.savedTranslation.x,translation.y+self.savedTranslation.y);
+//    cameraImage.center = CGPointMake(recognizer.view.center.x+updatedTranslation.x, recognizer.view.center.y+ updatedTranslation.y);
+//    if(recofnizer.state == UIGestureRecognizerStateEnded )
+//    {
+//    self.savedTranslation = updatedTranslation;
+//    }
+//    }
+    
     func songEndedPlaying(notification: NSNotification){
         self.playButton.enabled = true
         self.doneButton.enabled = false
         
-        self.drawText(self.titleLabel.text, image: self.background.image, point: self.background.center)
+        //self.drawText(self.titleLabel.text, image: self.background.image, point: self.background.center)
         
         self.logoImageView.layer.opacity = 0.0;
         let fadeOutAnimation = CABasicAnimation(keyPath: "opacity")
@@ -537,6 +569,19 @@ class mainViewController: UIViewController {
         self.logoImageView.layer.opacity = 0.0
         
         self.shuffleImageView.layer.opacity = 0.0
+        
+        self.shuffleImageView.layer.transform = CATransform3DMakeScale(0.0, 0.0, 0.0)
+        
+        UIView.animateWithDuration(0.5, delay: 0.2, usingSpringWithDamping: 0.4, initialSpringVelocity: 1.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: ({
+            self.shuffleImageView.layer.transform = CATransform3DMakeScale(1.0, 1.0, 1.0)
+        }), completion: nil)
+        
+        self.stopImageVIew.layer.transform = CATransform3DMakeScale(1.0, 1.0, 1.0)
+        
+        UIView.animateWithDuration(0.5, delay: 0.1, usingSpringWithDamping: 0.4, initialSpringVelocity: 1.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: ({
+            self.stopImageVIew.layer.transform = CATransform3DMakeScale(0.0, 0.0, 0.0)
+        }), completion: nil)
+        
 
         let opacityAnimation = CABasicAnimation(keyPath: "opacity")
         opacityAnimation.fromValue = NSNumber.numberWithFloat(0.0)
