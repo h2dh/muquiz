@@ -1,0 +1,13 @@
+PODS:
+  - CocoaLibSpotify (2.4.5):
+    - libspotify (= 12.1.64)
+  - libspotify (12.1.64)
+
+DEPENDENCIES:
+  - CocoaLibSpotify (~> 2.4.4)
+
+SPEC CHECKSUMS:
+  CocoaLibSpotify: d5c2cc8eac1a27618c6f3ff9f656cabb5982f52a
+  libspotify: 1f095010889816da1f68742bbe6e02fd5d09adb1
+
+COCOAPODS: 0.33.1

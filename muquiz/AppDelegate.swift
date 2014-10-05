@@ -9,7 +9,6 @@
 import UIKit
 import Foundation
 import QuartzCore
-import GPUImage
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var succesfulLogin : Bool = false
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
+        
+        // start of your application:didFinishLaunchingWithOptions // ...
+        TestFlight.takeOff("c4af4fd1-4c83-4dc6-b963-dff1f2c8993e")
         
         // Login if we already have saved credentials for user
          self.spotifyController.tryLoginIfStoredCredentials()
@@ -43,16 +45,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             rootViewController.pushViewController(loginVC, animated: true)
         }
         
-        let imageView = UIImageView(frame: self.window!.frame)
-        imageView.image = UIImage(named: "bg_image_1.jpg")
-        imageView.contentMode = UIViewContentMode.ScaleAspectFill
-        
-        var blur:UIBlurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-        var effectView:UIVisualEffectView = UIVisualEffectView (effect: blur)
-        effectView.frame = imageView.bounds
-        imageView.addSubview(effectView)
-        
-        self.window!.addSubview(imageView)
+//        let imageView = UIImageView(frame: self.window!.frame)
+//        imageView.image = UIImage(named: "bg_image_1.jpg")
+//        imageView.contentMode = UIViewContentMode.ScaleAspectFill
+//        
+//        var blur:UIBlurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+//        var effectView:UIVisualEffectView = UIVisualEffectView (effect: blur)
+//        effectView.frame = imageView.bounds
+//        imageView.addSubview(effectView)
+//        
+//        self.window!.addSubview(imageView)
     
         return true
     }
@@ -81,11 +83,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func setSpotifyController()->SpotifyController
     {
-        if(spotifyController == nil)
-        {
-            spotifyController = SpotifyController();
-        }
-        return spotifyController;
+        return self.spotifyController;
     }
 }
 

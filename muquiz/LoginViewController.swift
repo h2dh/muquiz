@@ -10,7 +10,6 @@ import UIKit
 import AVFoundation
 import QuartzCore
 import Foundation
-import GPUImage
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -22,31 +21,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var passwordHintLabel : UILabel!
     @IBOutlet var backgroundImageView : UIImageView!
     
+    @IBOutlet weak var vinyl1: UIImageView!
     var spotifyController : SpotifyController!
     var successfullLogin : Bool = false
     var keypath : String = ""
     
     override func viewWillAppear(animated: Bool) {
         self.addObserver(self, forKeyPath: "spotifyController.loggedInUser", options: .New, context: nil)
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
         
-        //self.navigationController.navigationBar.hidden = true
-    
-        self.usernameTextField.addTarget(self, action: Selector("textFieldShouldEndEditing:"), forControlEvents: UIControlEvents.EditingChanged)
-        self.passwordTextField.addTarget(self, action: Selector("textFieldShouldEndEditing:"), forControlEvents: UIControlEvents.EditingChanged)
-        
-        self.usernameHintLabel.alpha = 0.0
-        self.passwordHintLabel.alpha = 0.0
-        
-        var filter : GPUImagePixellateFilter = GPUImagePixellateFilter()
-        var filteredImage : UIImage = filter.imageByFilteringImage(self.backgroundImageView.image)
-        self.backgroundImageCopy.image = filteredImage
         
         let transitionFadeOut = CABasicAnimation(keyPath: "opacity")
-        
         transitionFadeOut.beginTime = CACurrentMediaTime()
         transitionFadeOut.duration = 0.5
         transitionFadeOut.fromValue = 1.0
@@ -56,11 +40,27 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         self.backgroundImageCopy.layer.addAnimation(transitionFadeOut, forKey: "opacity")
         self.backgroundImageCopy.layer.opacity = 0.0
-        
-        //var visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark)) as UIVisualEffectView
-        //visualEffectView.frame = self.backgroundImageView.bounds
-        //self.backgroundImageView.addSubview(visualEffectView)
+    }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //self.navigationController.navigationBar.hidden = true
+        
+//    
+//        self.usernameTextField.addTarget(self, action: Selector("textFieldShouldEndEditing:"), forControlEvents: UIControlEvents.EditingChanged)
+//        self.passwordTextField.addTarget(self, action: Selector("textFieldShouldEndEditing:"), forControlEvents: UIControlEvents.EditingChanged)
+        
+        self.usernameHintLabel.alpha = 0.0
+        self.passwordHintLabel.alpha = 0.0
+    
+        self.passwordTextField.delegate = self
+        self.usernameTextField.delegate = self
+        
+        self.view.bringSubviewToFront(self.passwordTextField)
+        
+        self.view.bringSubviewToFront(self.usernameTextField)
+        
         var vibrancy = UIVisualEffectView(effect: UIVibrancyEffect() as UIVibrancyEffect)
         
         vibrancy.frame = self.usernameHintLabel.bounds
@@ -73,19 +73,35 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.passwordTextField.addSubview(vibrancy)
         
     }
-
-    func textFieldShouldEndEditing(textField: UITextField!) -> Bool {
-        if textField.tag == 1 {
-            UIView.animateWithDuration(1, animations: {
-                self.usernameHintLabel.alpha = 1.0
-            })
-        } else {
-            UIView.animateWithDuration(1, animations: {
-                self.passwordHintLabel.alpha = 1.0
-            })
-        }
+    
+    override func prefersStatusBarHidden() -> Bool {
         return true
     }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if (textField == self.usernameTextField) {
+            textField.resignFirstResponder();
+            self.passwordTextField.becomeFirstResponder()
+            return false;
+        } else if (textField == self.passwordTextField) {
+            textField.resignFirstResponder()
+            return true
+        }
+        return true;
+    }
+
+//    func textFieldShouldEndEditing(textField: UITextField!) -> Bool {
+////        if textField.tag == 1 {
+////            UIView.animateWithDuration(1, animations: {
+////                self.usernameHintLabel.alpha = 1.0
+////            })
+////        } else {
+////            UIView.animateWithDuration(1, animations: {
+////                self.passwordHintLabel.alpha = 1.0
+////            })
+////        }
+////        return true
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -117,7 +133,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject!) -> Bool {
         if (self.successfullLogin) {
                      
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -132,28 +148,5 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
         return false
     }
-    
-    func startBackgroundVideo() {
-        
-        var playerItem : AVPlayerItem
-        var string : String
-        var optional : NSURL?
-        
-        optional = NSBundle.mainBundle().URLForResource("/Users/hannahreuterdahl/Documents/Development/MusiQuiz/backgroundVideo", withExtension: "mp4")
-        
-        if (optional != nil) {
-            var url = optional!
-            var player : AVPlayer = AVPlayer.playerWithURL(url) as AVPlayer
-            
-            var layer : AVPlayerLayer = AVPlayerLayer()
-            
-            playerItem = AVPlayerItem(URL: url)
-            
-            player = AVPlayer(playerItem: playerItem)
-            var playerLayer : AVPlayerLayer = AVPlayerLayer(player: player)
-            playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
-            playerLayer.frame = self.view!.bounds
-            self.view.layer.addSublayer(playerLayer)
-        }
-    }
+
 }
