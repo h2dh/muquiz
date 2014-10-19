@@ -25,36 +25,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // start of your application:didFinishLaunchingWithOptions // ...
         TestFlight.takeOff("c4af4fd1-4c83-4dc6-b963-dff1f2c8993e")
         
-        // Login if we already have saved credentials for user
-         self.spotifyController.tryLoginIfStoredCredentials()
-        
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         UIApplication.sharedApplication().statusBarHidden = true
         self.window!.rootViewController = UINavigationController()
         var rootViewController = self.window!.rootViewController as UINavigationController
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         rootViewController.navigationBarHidden = true
-        if (self.spotifyController.successfullLogin) {
-            let mainVC :mainViewController = mainStoryboard.instantiateViewControllerWithIdentifier("mainViewController") as mainViewController
+        
+        // Login if we already have saved credentials for user
+        self.spotifyController.tryLoginIfStoredCredentials()
+        if ((self.spotifyController.loggedInUser) != nil) {
+            let mainVC : PlayBoardViewController = mainStoryboard.instantiateViewControllerWithIdentifier("PlayBoardViewController") as PlayBoardViewController
             mainVC.spotifyController = self.spotifyController
                 rootViewController.pushViewController(mainVC, animated: true)
-                
         } else {
             let loginVC : LoginViewController = mainStoryboard.instantiateViewControllerWithIdentifier("LoginViewController") as LoginViewController
             loginVC.spotifyController = self.spotifyController
             rootViewController.pushViewController(loginVC, animated: true)
         }
-        
-//        let imageView = UIImageView(frame: self.window!.frame)
-//        imageView.image = UIImage(named: "bg_image_1.jpg")
-//        imageView.contentMode = UIViewContentMode.ScaleAspectFill
-//        
-//        var blur:UIBlurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-//        var effectView:UIVisualEffectView = UIVisualEffectView (effect: blur)
-//        effectView.frame = imageView.bounds
-//        imageView.addSubview(effectView)
-//        
-//        self.window!.addSubview(imageView)
     
         return true
     }

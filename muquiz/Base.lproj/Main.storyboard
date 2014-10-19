@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
@@ -16,9 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_image_1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="9XG-1B-iPW">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="nYo-Rq-e1d">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
@@ -46,18 +43,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="yo!" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shK-xB-Ocb">
-                                <rect key="frame" x="255" y="233" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="awesome!" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8z-Vd-gYe">
-                                <rect key="frame" x="242" y="278" width="57" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hbJ-eW-ZYu">
                                 <rect key="frame" x="37" y="343" width="246" height="45"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -82,12 +67,9 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="backgroundImageCopy" destination="9XG-1B-iPW" id="1bk-kV-NqW"/>
                         <outlet property="backgroundImageView" destination="nYo-Rq-e1d" id="82Y-Hu-F7S"/>
                         <outlet property="loginButton" destination="hbJ-eW-ZYu" id="M9t-EE-whb"/>
-                        <outlet property="passwordHintLabel" destination="b8z-Vd-gYe" id="gN1-hr-XTU"/>
                         <outlet property="passwordTextField" destination="fZD-gp-zbN" id="UCn-Dx-3SA"/>
-                        <outlet property="usernameHintLabel" destination="shK-xB-Ocb" id="knO-Ec-zZd"/>
                         <outlet property="usernameTextField" destination="u06-Gz-pIx" id="Cwe-Z5-V8u"/>
                         <segue destination="Rx5-YW-Y4u" kind="push" identifier="push" id="X0x-dt-oab"/>
                     </connections>
@@ -96,10 +78,10 @@
             </objects>
             <point key="canvasLocation" x="88" y="319"/>
         </scene>
-        <!--Main View Controller-->
+        <!--Play Board View Controller-->
         <scene sceneID="D6C-Pt-vov">
             <objects>
-                <viewController storyboardIdentifier="mainViewController" id="Rx5-YW-Y4u" customClass="mainViewController" customModule="muquiz" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlayBoardViewController" id="Rx5-YW-Y4u" customClass="PlayBoardViewController" customModule="muquiz" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qCI-6n-0R2"/>
                         <viewControllerLayoutGuide type="bottom" id="6gG-0I-iJX"/>
@@ -115,9 +97,9 @@
                                 <rect key="frame" x="21" y="136" width="280" height="280"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeholder-albumart.png" translatesAutoresizingMaskIntoConstraints="NO" id="9he-2P-1Rh">
-                                <rect key="frame" x="123" y="239" width="75" height="75"/>
+                                <rect key="frame" x="123" y="238" width="77" height="77"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x5s-MX-49P" userLabel="bg_image_1_copy.jpg">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x5s-MX-49P" userLabel="bg_image_1_copy.jpg">
                                 <rect key="frame" x="123" y="239" width="75" height="75"/>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="vinyl.png" translatesAutoresizingMaskIntoConstraints="NO" id="BpL-T4-eFn">
@@ -199,12 +181,12 @@
                         <outlet property="logoImageView" destination="TmJ-vw-hTP" id="fP8-k1-93g"/>
                         <outlet property="pickUpImage" destination="K3l-wA-RoP" id="qhl-JU-Xbc"/>
                         <outlet property="playButton" destination="YhE-j8-mdR" id="8lG-nX-Fhs"/>
+                        <outlet property="playImageView" destination="JhJ-C5-Xv3" id="EfU-uJ-kGN"/>
                         <outlet property="pointLabel" destination="f2a-Sa-jhY" id="aEu-Zj-BPw"/>
-                        <outlet property="shuffleImageView" destination="JhJ-C5-Xv3" id="uZK-xQ-wN6"/>
                         <outlet property="songImageView" destination="9he-2P-1Rh" id="whB-1Z-FeO"/>
                         <outlet property="songImageViewCopy" destination="x5s-MX-49P" id="v8h-OI-ekk"/>
                         <outlet property="songTitleLabel" destination="nEu-5n-NTv" id="ZWV-XK-boR"/>
-                        <outlet property="stopImageVIew" destination="ROf-gi-Pjy" id="ZOE-49-7X6"/>
+                        <outlet property="stopImageView" destination="ROf-gi-Pjy" id="bLj-QF-AHf"/>
                         <outlet property="titleLabel" destination="6NJ-hC-uIQ" id="W8T-uQ-Q9s"/>
                         <outlet property="vinylImage" destination="BpL-T4-eFn" id="WLx-Yg-Y9O"/>
                     </connections>
@@ -217,7 +199,6 @@
     <resources>
         <image name="app-border.png" width="640" height="1136"/>
         <image name="background.png" width="640" height="1136"/>
-        <image name="bg_image_1.jpg" width="615" height="385"/>
         <image name="button.png" width="156" height="156"/>
         <image name="icon-play.png" width="52" height="72"/>
         <image name="icon-stop.png" width="64" height="62"/>

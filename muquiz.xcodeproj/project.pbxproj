@@ -30,7 +30,7 @@
 		9834EA7B19AFAC85005D22A4 /* logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 9834EA7A19AFAC85005D22A4 /* logout.png */; };
 		9834EA7D19AFB2D7005D22A4 /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = 9834EA7C19AFB2D7005D22A4 /* login.png */; };
 		9834EA8119AFB532005D22A4 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 9834EA8019AFB532005D22A4 /* background.png */; };
-		98612B4919995DF400865193 /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98612B4819995DF400865193 /* mainViewController.swift */; };
+		98612B4919995DF400865193 /* PlayBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98612B4819995DF400865193 /* PlayBoardViewController.swift */; };
 		987140F71993D4B2009E14A3 /* bg_image_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 987140F61993D4B2009E14A3 /* bg_image_1.jpg */; };
 		987725CC19A545FC0046D73F /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 987725CB19A545FC0046D73F /* UIImage+ImageEffects.m */; };
 		9881D4AD199EC10800F40D3D /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9881D4AC199EC10800F40D3D /* CustomView.swift */; };
@@ -96,7 +96,7 @@
 		9834EA7A19AFAC85005D22A4 /* logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logout.png; sourceTree = "<group>"; };
 		9834EA7C19AFB2D7005D22A4 /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
 		9834EA8019AFB532005D22A4 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
-		98612B4819995DF400865193 /* mainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
+		98612B4819995DF400865193 /* PlayBoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayBoardViewController.swift; sourceTree = "<group>"; };
 		987140F61993D4B2009E14A3 /* bg_image_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg_image_1.jpg; path = ../../../../../../../../Documents/Development/MusiQuiz/muquiz/bg_image_1.jpg; sourceTree = BUILT_PRODUCTS_DIR; };
 		987725CA19A545FC0046D73F /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		987725CB19A545FC0046D73F /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
@@ -280,7 +280,7 @@
 				98CA51681958B0E300FE2780 /* LoginViewController.swift */,
 				9881D4AC199EC10800F40D3D /* CustomView.swift */,
 				98CA516A1958B0E300FE2780 /* Main.storyboard */,
-				98612B4819995DF400865193 /* mainViewController.swift */,
+				98612B4819995DF400865193 /* PlayBoardViewController.swift */,
 				98FBE53F19A16543007B1D2E /* InsetBlurModalSeque.swift */,
 				98D2CC84199D522B008DD932 /* Track.swift */,
 				98CA516D1958B0E300FE2780 /* Images.xcassets */,
@@ -491,7 +491,7 @@
 				98CA51691958B0E300FE2780 /* LoginViewController.swift in Sources */,
 				98CA51671958B0E300FE2780 /* AppDelegate.swift in Sources */,
 				98BA5A1619ABA3A50003DF08 /* MZTimerLabel.m in Sources */,
-				98612B4919995DF400865193 /* mainViewController.swift in Sources */,
+				98612B4919995DF400865193 /* PlayBoardViewController.swift in Sources */,
 				98E20A6719D6A0A200F6AE9F /* README.md in Sources */,
 				98FBE54019A16543007B1D2E /* InsetBlurModalSeque.swift in Sources */,
 				987725CC19A545FC0046D73F /* UIImage+ImageEffects.m in Sources */,
@@ -568,10 +568,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				METAL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
 			};
 			name = Debug;
 		};
@@ -608,6 +609,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
 			};
 			name = Release;
 		};
@@ -616,10 +618,6 @@
 			baseConfigurationReference = 13EB1BACF0AE43889F7D50B3 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = (
-					"$(ARCHS_STANDARD)",
-					i386,
-				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jonas Bäckman (2ZRQJ7V2HW)";
@@ -643,7 +641,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/muquiz/TestFlightSDK3.0.2",
 				);
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -659,10 +657,6 @@
 			baseConfigurationReference = 13EB1BACF0AE43889F7D50B3 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = (
-					"$(ARCHS_STANDARD)",
-					i386,
-				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jonas Bäckman (2ZRQJ7V2HW)";
@@ -688,7 +682,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/muquiz/TestFlightSDK3.0.2",
 				);
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

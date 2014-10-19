@@ -9,12 +9,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "muquiz/mainViewController.swift"
-            timestampString = "433495547.93368"
+            filePath = "muquiz/PlayBoardViewController.swift"
+            timestampString = "435411120.717369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "472"
-            endingLineNumber = "472"
+            startingLineNumber = "460"
+            endingLineNumber = "460"
             landmarkName = "observeValueForKeyPath(_:ofObject:change:context:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "muquiz/LoginViewController.swift"
-            timestampString = "433801704.749624"
+            timestampString = "434926401.219228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "observeValueForKeyPath(_:ofObject:change:context:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -73,12 +73,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "muquiz/mainViewController.swift"
-            timestampString = "433495547.93368"
+            filePath = "muquiz/PlayBoardViewController.swift"
+            timestampString = "435411120.717369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "513"
-            endingLineNumber = "513"
+            startingLineNumber = "501"
+            endingLineNumber = "501"
             landmarkName = "chooseRandomSongForGenre(_:)"
             landmarkType = "5">
             <Locations>
@@ -120,11 +120,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "muquiz/SpotifyController.m"
-            timestampString = "430698422.434363"
+            timestampString = "435410327.338158"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
             landmarkName = "-startAndStop:After:"
             landmarkType = "5">
          </BreakpointContent>
@@ -136,11 +136,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "muquiz/SpotifyController.m"
-            timestampString = "430698422.434363"
+            timestampString = "435410327.338158"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
+            startingLineNumber = "190"
+            endingLineNumber = "190"
             landmarkName = "-songDone:"
             landmarkType = "5">
          </BreakpointContent>
@@ -151,12 +151,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "muquiz/mainViewController.swift"
-            timestampString = "433495547.93368"
+            filePath = "muquiz/PlayBoardViewController.swift"
+            timestampString = "435411120.717369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "501"
-            endingLineNumber = "501"
+            startingLineNumber = "489"
+            endingLineNumber = "489"
             landmarkName = "chooseRandomSongForGenre(_:)"
             landmarkType = "5">
             <Locations>
@@ -213,8 +213,8 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "muquiz/mainViewController.swift"
-            timestampString = "433495547.93368"
+            filePath = "muquiz/PlayBoardViewController.swift"
+            timestampString = "435411120.717369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "241"
@@ -317,12 +317,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "muquiz/mainViewController.swift"
-            timestampString = "433495547.93368"
+            filePath = "muquiz/PlayBoardViewController.swift"
+            timestampString = "435411120.717369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "514"
-            endingLineNumber = "514"
+            startingLineNumber = "502"
+            endingLineNumber = "502"
             landmarkName = "chooseRandomSongForGenre(_:)"
             landmarkType = "5">
             <Locations>
@@ -405,12 +405,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "muquiz/mainViewController.swift"
-            timestampString = "433495547.93368"
+            filePath = "muquiz/PlayBoardViewController.swift"
+            timestampString = "435411120.717369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "517"
-            endingLineNumber = "517"
+            startingLineNumber = "505"
+            endingLineNumber = "505"
             landmarkName = "chooseRandomSongForGenre(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -418,47 +418,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "muquiz/mainViewController.swift"
-            timestampString = "433495547.93368"
+            filePath = "muquiz/PlayBoardViewController.swift"
+            timestampString = "435411120.717369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "251"
-            endingLineNumber = "251"
+            startingLineNumber = "252"
+            endingLineNumber = "252"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "muquiz.mainViewController.viewDidLoad (muquiz.mainViewController)() -&gt; ()"
-                  moduleName = "muquiz"
-                  urlString = "file:///Users/hannahreuterdahl/Documents/Development/MusiQuiz/muquiz/mainViewController.swift"
-                  timestampString = "430598462.425291"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "116"
-                  endingLineNumber = "116"
-                  offsetFromSymbolStart = "2512">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "muquiz.mainViewController.viewDidLoad (muquiz.mainViewController)() -&gt; ()"
-                  moduleName = "muquiz"
-                  urlString = "file:///Users/hannahreuterdahl/Documents/Development/MusiQuiz/muquiz/mainViewController.swift"
-                  timestampString = "430598462.425495"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "116"
-                  endingLineNumber = "116"
-                  offsetFromSymbolStart = "2581">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -467,12 +437,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "muquiz/mainViewController.swift"
-            timestampString = "433495547.93368"
+            filePath = "muquiz/PlayBoardViewController.swift"
+            timestampString = "435411120.717369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "484"
-            endingLineNumber = "484"
+            startingLineNumber = "472"
+            endingLineNumber = "472"
             landmarkName = "observeValueForKeyPath(_:ofObject:change:context:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -483,12 +453,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "muquiz/mainViewController.swift"
-            timestampString = "433495547.93368"
+            filePath = "muquiz/PlayBoardViewController.swift"
+            timestampString = "435411120.717369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395"
+            startingLineNumber = "394"
+            endingLineNumber = "394"
             landmarkName = "startAnimationForSong()"
             landmarkType = "5">
             <Locations>
@@ -526,57 +496,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "muquiz/mainViewController.swift"
-            timestampString = "433495547.93368"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "362"
-            endingLineNumber = "362"
-            landmarkName = "startAnimationForSong()"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "muquiz.mainViewController.startAnimationForSong (muquiz.mainViewController)() -&gt; ()"
-                  moduleName = "muquiz"
-                  urlString = "file:///Users/hannahreuterdahl/Documents/Development/muquiz/muquiz/mainViewController.swift"
-                  timestampString = "430943851.864652"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "317"
-                  endingLineNumber = "317"
-                  offsetFromSymbolStart = "24">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "muquiz.mainViewController.startAnimationForSong (muquiz.mainViewController)() -&gt; ()"
-                  moduleName = "muquiz"
-                  urlString = "file:///Users/hannahreuterdahl/Documents/Development/muquiz/muquiz/mainViewController.swift"
-                  timestampString = "430943851.864766"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "317"
-                  endingLineNumber = "317"
-                  offsetFromSymbolStart = "82">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "muquiz/mainViewController.swift"
-            timestampString = "433495547.93368"
+            filePath = "muquiz/PlayBoardViewController.swift"
+            timestampString = "435411120.717369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "318"
@@ -585,32 +509,32 @@
             landmarkType = "5">
             <Locations>
                <Location
-                  shouldBeEnabled = "No"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "muquiz.mainViewController.pickRandomSong (muquiz.mainViewController)() -&gt; ()"
+                  symbolName = "muquiz.PlayBoardViewController.pickRandomSong (muquiz.PlayBoardViewController)() -&gt; ()"
                   moduleName = "muquiz"
-                  urlString = "file:///Users/hannahreuterdahl/Documents/Development/MusiQuiz/muquiz/mainViewController.swift"
-                  timestampString = "430680485.050717"
+                  urlString = "file:///Users/hannahreuterdahl/Documents/Development/muquiz/muquiz/PlayBoardViewController.swift"
+                  timestampString = "435410327.766362"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "231"
-                  endingLineNumber = "231"
+                  startingLineNumber = "345"
+                  endingLineNumber = "345"
                   offsetFromSymbolStart = "24">
                </Location>
                <Location
-                  shouldBeEnabled = "No"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "muquiz.mainViewController.pickRandomSong (muquiz.mainViewController)() -&gt; ()"
+                  symbolName = "muquiz.PlayBoardViewController.pickRandomSong (muquiz.PlayBoardViewController)() -&gt; ()"
                   moduleName = "muquiz"
-                  urlString = "file:///Users/hannahreuterdahl/Documents/Development/MusiQuiz/muquiz/mainViewController.swift"
-                  timestampString = "430680485.050827"
+                  urlString = "file:///Users/hannahreuterdahl/Documents/Development/muquiz/muquiz/PlayBoardViewController.swift"
+                  timestampString = "435410327.766445"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "231"
-                  endingLineNumber = "231"
-                  offsetFromSymbolStart = "11033">
+                  startingLineNumber = "345"
+                  endingLineNumber = "345"
+                  offsetFromSymbolStart = "9655">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -638,11 +562,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "muquiz/LoginViewController.swift"
-            timestampString = "433801704.749624"
+            timestampString = "434926401.219228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "shouldPerformSegueWithIdentifier(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -653,12 +577,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "muquiz/mainViewController.swift"
-            timestampString = "430987031.76475"
+            filePath = "muquiz/PlayBoardViewController.swift"
+            timestampString = "435411120.717369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
             <Locations>
@@ -691,22 +615,6 @@
                   offsetFromSymbolStart = "169">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "muquiz/mainViewController.swift"
-            timestampString = "433495547.93368"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "577"
-            endingLineNumber = "577"
-            landmarkName = "forceEndSong()"
-            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -772,7 +680,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "muquiz/SpotifyController.m"
@@ -792,45 +700,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "muquiz/LoginViewController.swift"
-            timestampString = "430950228.182472"
+            timestampString = "434926401.219228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "muquiz/LoginViewController.swift"
-            timestampString = "433801704.749624"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "login(_:)"
             landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "muquiz/mainViewController.swift"
-            timestampString = "433495547.93368"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "641"
-            endingLineNumber = "641"
-            landmarkName = "mainViewController"
-            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -839,12 +715,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "muquiz/mainViewController.swift"
-            timestampString = "430960297.785268"
+            filePath = "muquiz/PlayBoardViewController.swift"
+            timestampString = "435411120.717369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "changePoint(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -855,14 +731,58 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "muquiz/mainViewController.swift"
-            timestampString = "430960297.785268"
+            filePath = "muquiz/PlayBoardViewController.swift"
+            timestampString = "435411120.717369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
             landmarkName = "changePoint(_:)"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "muquiz.PlayBoardViewController.changePoint (muquiz.PlayBoardViewController)(ObjectiveC.NSTimer) -&gt; ()"
+                  moduleName = "muquiz"
+                  urlString = "file:///Users/hannahreuterdahl/Documents/Development/muquiz/muquiz/PlayBoardViewController.swift"
+                  timestampString = "435410327.766805"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "154"
+                  endingLineNumber = "154"
+                  offsetFromSymbolStart = "30">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "muquiz.PlayBoardViewController.changePoint (muquiz.PlayBoardViewController)(ObjectiveC.NSTimer) -&gt; ()"
+                  moduleName = "muquiz"
+                  urlString = "file:///Users/hannahreuterdahl/Documents/Development/muquiz/muquiz/PlayBoardViewController.swift"
+                  timestampString = "435410327.766914"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "154"
+                  endingLineNumber = "154"
+                  offsetFromSymbolStart = "1141">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "muquiz.PlayBoardViewController.changePoint (muquiz.PlayBoardViewController)(ObjectiveC.NSTimer) -&gt; ()"
+                  moduleName = "muquiz"
+                  urlString = "file:///Users/hannahreuterdahl/Documents/Development/muquiz/muquiz/PlayBoardViewController.swift"
+                  timestampString = "435410327.767"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "154"
+                  endingLineNumber = "154"
+                  offsetFromSymbolStart = "9253">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -871,12 +791,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "muquiz/mainViewController.swift"
-            timestampString = "430960297.785268"
+            filePath = "muquiz/PlayBoardViewController.swift"
+            timestampString = "435411120.717369"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "leftSwipe(_:)"
             landmarkType = "5">
          </BreakpointContent>

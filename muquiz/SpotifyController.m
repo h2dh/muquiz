@@ -71,9 +71,9 @@
     if(authenticatedUser.userName)
     {
         [self loginWithUserName:authenticatedUser.userName andExistingCredentials:authenticatedUser.credentials];
-        self.successfullLogin = YES;
+        //self.successfullLogin = YES;
     } else {
-        self.successfullLogin = NO;
+       // self.successfullLogin = NO;
     }
 
 }
@@ -116,6 +116,12 @@
 {
     self.search = [[SPSearch alloc] initWithSearchQuery:[NSString stringWithFormat:@"genre:%@",genre] inSession:self.spotifySession];
 }
+
+-(void) getPlaylist:(NSString *)playlist
+{
+    //self.search = [[SPSearch alloc] initWithSearchQuery:@"playlist:29Kx4MijwHzwwTSftv5zjN" inSession:self.spotifySession];
+}
+
 -(void) getSearchResultsWithSearchString:(NSString *)searchString
 {
     self.search = [[SPSearch alloc] initWithSearchQuery:searchString inSession:self.spotifySession];
@@ -142,13 +148,11 @@
 
 -(void) pause:(SPTrack *)track {
     [self pausePlayMusic];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"kSPSongEnded" object:nil];
+    //[[NSNotificationCenter defaultCenter] postNotificationName:@"kSPSongEnded" object:nil];
     [self.timer invalidate];
 }
 -(void) startPauseTrack:(SPTrack *)track
-{
-
-    
+{    
     [[NSNotificationCenter defaultCenter] postNotificationName:@"kSPSongEnded" object:nil];
     if(self.playbackManager.isPlaying)
     {

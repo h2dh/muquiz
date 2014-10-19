@@ -20,6 +20,7 @@
 @property (nonatomic, strong) SPSearch *search;
 -(void) getSearchResultsWithSearchString:(NSString *)searchString;
 -(void) getTracksForGenre:(NSString *)genre;
+-(void) getPlaylist:(NSString *)playlist;
 
 -(void) startPauseTrack:(SPTrack *)track;
 -(BOOL) isPlayingSong;

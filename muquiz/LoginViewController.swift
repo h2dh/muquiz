@@ -13,12 +13,9 @@ import Foundation
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var backgroundImageCopy: UIImageView!
     @IBOutlet var usernameTextField : UITextField!
     @IBOutlet var passwordTextField : UITextField!
     @IBOutlet var loginButton : UIButton!
-    @IBOutlet var usernameHintLabel : UILabel!
-    @IBOutlet var passwordHintLabel : UILabel!
     @IBOutlet var backgroundImageView : UIImageView!
     
     @IBOutlet weak var vinyl1: UIImageView!
@@ -28,50 +25,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(animated: Bool) {
         self.addObserver(self, forKeyPath: "spotifyController.loggedInUser", options: .New, context: nil)
-        
-        
-        let transitionFadeOut = CABasicAnimation(keyPath: "opacity")
-        transitionFadeOut.beginTime = CACurrentMediaTime()
-        transitionFadeOut.duration = 0.5
-        transitionFadeOut.fromValue = 1.0
-        transitionFadeOut.toValue = 0.0
-        transitionFadeOut.delegate = self
-        transitionFadeOut.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        
-        self.backgroundImageCopy.layer.addAnimation(transitionFadeOut, forKey: "opacity")
-        self.backgroundImageCopy.layer.opacity = 0.0
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //self.navigationController.navigationBar.hidden = true
-        
-//    
-//        self.usernameTextField.addTarget(self, action: Selector("textFieldShouldEndEditing:"), forControlEvents: UIControlEvents.EditingChanged)
-//        self.passwordTextField.addTarget(self, action: Selector("textFieldShouldEndEditing:"), forControlEvents: UIControlEvents.EditingChanged)
-        
-        self.usernameHintLabel.alpha = 0.0
-        self.passwordHintLabel.alpha = 0.0
     
         self.passwordTextField.delegate = self
         self.usernameTextField.delegate = self
         
         self.view.bringSubviewToFront(self.passwordTextField)
-        
         self.view.bringSubviewToFront(self.usernameTextField)
-        
-        var vibrancy = UIVisualEffectView(effect: UIVibrancyEffect() as UIVibrancyEffect)
-        
-        vibrancy.frame = self.usernameHintLabel.bounds
-        self.usernameHintLabel.addSubview(vibrancy)
-        
-        vibrancy.frame = self.usernameTextField.bounds
-        self.usernameTextField.addSubview(vibrancy)
-        
-        vibrancy.frame = self.passwordTextField.bounds
-        self.passwordTextField.addSubview(vibrancy)
-        
     }
     
     override func prefersStatusBarHidden() -> Bool {
@@ -89,19 +52,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
         return true;
     }
-
-//    func textFieldShouldEndEditing(textField: UITextField!) -> Bool {
-////        if textField.tag == 1 {
-////            UIView.animateWithDuration(1, animations: {
-////                self.usernameHintLabel.alpha = 1.0
-////            })
-////        } else {
-////            UIView.animateWithDuration(1, animations: {
-////                self.passwordHintLabel.alpha = 1.0
-////            })
-////        }
-////        return true
-//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -129,7 +79,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 self.successfullLogin = true
                 self.shouldPerformSegueWithIdentifier("push", sender: self)
             }
-
         }
     }
     
@@ -137,7 +86,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if (self.successfullLogin) {
                      
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            var mainVC = mainStoryboard.instantiateViewControllerWithIdentifier("mainViewController") as mainViewController
+            var mainVC = mainStoryboard.instantiateViewControllerWithIdentifier("PlayBoardViewController") as PlayBoardViewController
             
             mainVC.spotifyController = self.spotifyController
             self.presentViewController(mainVC, animated:false, completion: nil)
